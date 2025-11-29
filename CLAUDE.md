@@ -27,24 +27,40 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 ## Project Structure
 ```
 /spellingbee
-  index.html
+  index.html              # Main spelling practice interface
   /css
-    style.css
+    style.css             # Calm teal/blue styling
   /js
-    app.js
-  /audio
-    <word>.mp3 (generated later)
-  words.json
+    app.js                # Word loading and pronunciation logic
+  /audio                  # 146 MP3 pronunciation files
+    <word>.mp3
+  words.json              # All 146 words with IDs
+  generate_audio.py       # OpenAI TTS audio generation script
+  requirements.txt        # Python dependencies
+  .env.example            # API key template
+  AUDIO_GENERATION.md     # Audio generation documentation
   README.md
   PRD.md
   CLAUDE.md
 ```
 
+## Repository
+- GitHub: https://github.com/yvh1223/SpellingBee
+- Personal account: yvh1223@gmail.com
+- GPG signed commits with key: 98CE179940DF710F
+
 ## Important Notes
 - No tracking, analytics, or data storage
 - Personal GitHub repo only
 - Focus on accessibility with proper contrast and fonts
+- All 146 audio files generated using OpenAI TTS (gpt-4o-mini-tts, Alloy voice)
 - Future enhancements may include bee simulation mode, random challenges, dark mode
 
 ## Implementation Status
-Work in progress - building initial version with all core features.
+Core implementation complete:
+- ✅ Website with pronunciation-driven interface
+- ✅ All 146 audio files generated
+- ✅ Progressive reveal/hide functionality
+- ✅ Mobile-responsive design
+- ✅ Pushed to GitHub with GPG signatures
+- 🔄 GitHub Pages deployment pending
