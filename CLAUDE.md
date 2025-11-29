@@ -17,6 +17,7 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 - Pure HTML5, CSS3, and vanilla JavaScript
 - Data stored in `words.json`
 - Audio files in `/audio` directory as MP3s
+- Python 3.13+ for audio generation (SSL workaround needed on macOS)
 - Deployable to GitHub Pages
 
 ## Data Source
