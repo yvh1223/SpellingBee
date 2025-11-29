@@ -1,110 +1,110 @@
-# SpellingBee for Vihaan
+# SpellingBee Practice
 
-A clean, modern, pronunciation-first spelling practice website designed
-to help Vihaan prepare for his School Spelling Bee (Grades 6-8).
+A minimalist, pronunciation-driven spelling practice website for grades 6-8.
 
-## 🎯 Purpose
+**🌐 Live Site:** https://yvh1223.github.io/SpellingBee/
 
-To create a distraction-free, beautiful practice experience where:
-- Each word is hidden until Vihaan reveals it
-- Pronunciation comes first
-- Learning happens gracefully, one word at a time
+## Features
 
-## ✨ Features
+- 145 pronunciation-driven spelling words
+- Audio playback for each word (OpenAI TTS - Alloy voice)
+- Progressive reveal/hide functionality
+- Apple-inspired minimalist design
+- Fully responsive (mobile/tablet/desktop)
+- No tracking, ads, or logins
 
-- Full word list displayed in order (146 words)
-- Pronunciation Play button for each word
-- Masked spelling until Reveal is clicked
-- Calm, modern design with soothing teal/blue/grey colors
-- Mobile-friendly and responsive
-- No logins, tracking, or ads
-- Fully offline-capable
+## Quick Start
 
-## 🧱 Tech Stack
+```bash
+# Clone and open
+git clone https://github.com/yvh1223/SpellingBee
+cd SpellingBee
+open index.html
+```
 
-- HTML5
-- CSS3 (custom, no frameworks)
-- Vanilla JavaScript
-- Local `words.json` data file
-- Audio files in `/audio` directory
-
-## 📂 Project Structure
+## Project Structure
 
 ```
-/spellingbee
-  index.html          # Main page
+/SpellingBee
+  index.html              # Main interface
   /css
-    style.css         # All styling
+    style.css             # Minimalist styling
   /js
-    app.js            # Application logic
-  /audio
-    *.mp3             # Pronunciation audio files
-    README.md         # Audio file naming guide
-  words.json          # Word data (146 words)
-  schoolBee_3.txt     # Original word list
-  README.md
-  PRD.md
-  CLAUDE.md
-  .gitignore
+    app.js                # Word loading & playback logic
+  /audio                  # 145 MP3 pronunciation files
+  words.json              # All words with IDs
+  generate_audio.py       # Audio generation script
+  requirements.txt        # Python dependencies
+  .env.example            # API key template
+  AUDIO_GENERATION.md     # Audio generation guide
 ```
 
-## 🚀 Getting Started
+## Development Workflow
 
-### Local Development
+```mermaid
+flowchart TD
+    A[Start] --> B[Word List Source]
+    B --> C[Parse schoolBee_3.txt]
+    C --> D[Generate words.json]
+    D --> E[Setup Python venv]
+    E --> F[Install OpenAI SDK]
+    F --> G[Configure .env with API key]
+    G --> H[Run generate_audio.py]
+    H --> I[Generate 145 MP3 files]
+    I --> J[Build HTML/CSS/JS Interface]
+    J --> K[Implement Audio Playback]
+    K --> L[Add Reveal/Hide Logic]
+    L --> M[Apply Apple-inspired Styling]
+    M --> N[Responsive Grid Layout]
+    N --> O[Test Locally]
+    O --> P{All Working?}
+    P -->|No| Q[Debug & Fix]
+    Q --> O
+    P -->|Yes| R[Git Commit with GPG]
+    R --> S[Push to GitHub]
+    S --> T[Enable GitHub Pages]
+    T --> U[Deploy to Production]
+    U --> V[Live at yvh1223.github.io/SpellingBee]
 
-1. Clone the project:
-   ```bash
-   git clone https://github.com/yvh1223/spellingbee
-   cd spellingbee
-   ```
+    style A fill:#e8e8ed
+    style V fill:#34c759
+    style I fill:#007aff
+    style M fill:#ff9500
+    style U fill:#34c759
+```
 
-2. Open in browser:
-   ```bash
-   open index.html
-   ```
+## Audio Generation
 
-### Adding Audio Files
+See [AUDIO_GENERATION.md](AUDIO_GENERATION.md) for detailed instructions.
 
-Audio files need to be generated for each word. See `audio/README.md` for naming conventions and generation instructions.
+**Quick Generate:**
+```bash
+source venv/bin/activate
+python generate_audio.py
+```
 
-## 🌐 GitHub Pages Deployment
+- Uses OpenAI `gpt-4o-mini-tts` model
+- Voice: Alloy (US English)
+- Cost: ~$0.03 for all 145 files
+- Skips existing files (use `--force` to regenerate)
 
-To deploy to GitHub Pages:
+## Design Principles
 
-1. Push to GitHub:
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yvh1223/spellingbee.git
-   git push -u origin main
-   ```
+- **Pronunciation First**: Audio-driven learning experience
+- **Progressive Reveal**: Words masked until revealed
+- **Minimalist UI**: Apple-inspired clean design
+- **Calm Colors**: Neutral grays (#fafafa, #e8e8ed, #1d1d1f)
+- **Space Efficient**: Grid layout with large readable fonts
+- **Mobile Friendly**: Responsive breakpoints at 768px and 480px
 
-2. Enable GitHub Pages:
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Source: Deploy from branch
-   - Branch: main, folder: / (root)
-   - Click Save
+## Tech Stack
 
-3. Access at: `https://yvh1223.github.io/spellingbee/`
+- Pure HTML5, CSS3, Vanilla JavaScript
+- No frameworks or dependencies
+- OpenAI TTS for audio generation
+- Python 3.13+ (with SSL workaround for macOS)
+- GitHub Pages deployment
 
-## 📝 Word List
+## License
 
-Contains 146 words from the School Spelling Bee list, including:
-- Standard English words
-- Words with accented characters (pâtisserie, fräulein, protégé)
-- Multi-word phrases (au revoir, hors d'oeuvres, boll weevil)
-- Proper nouns (Kilimanjaro, Tucson, Erie)
-
-## 🎨 Design Philosophy
-
-- **Calm Colors**: Soft teal (#4A90A4) and blue (#67B7D1) for a soothing experience
-- **Large Typography**: 2rem word display for easy reading
-- **Rounded Buttons**: Friendly, approachable UI elements
-- **Smooth Animations**: Gentle fade-in effects when revealing words
-- **No Clutter**: Clean, focused interface with only essential elements
-
-## 📜 License
-
-Personal use only - built lovingly for Vihaan's learning journey.
+Personal use only - built for Vihaan's spelling bee preparation.
