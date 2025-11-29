@@ -12,7 +12,7 @@ async function loadWords() {
         updateStats();
     } catch (error) {
         console.error('Error loading words:', error);
-        document.getElementById('word-list').innerHTML = '<p style="text-align: center; color: red;">Error loading words. Please refresh the page.</p>';
+        document.getElementById('word-list').innerHTML = '<p style="text-align: center; color: #86868b;">Error loading words. Please refresh.</p>';
     }
 }
 
@@ -36,24 +36,24 @@ function createWordCard(wordObj) {
 
     const wordNumber = document.createElement('span');
     wordNumber.className = 'word-number';
-    wordNumber.textContent = `Word ${wordObj.id}`;
+    wordNumber.textContent = `${wordObj.id}`;
 
     const actions = document.createElement('div');
     actions.className = 'word-actions';
 
     const playBtn = document.createElement('button');
     playBtn.className = 'btn btn-play';
-    playBtn.textContent = '🔊 Play Pronunciation';
+    playBtn.textContent = 'Play';
     playBtn.onclick = () => playPronunciation(wordObj.word, playBtn);
 
     const revealBtn = document.createElement('button');
     revealBtn.className = 'btn btn-reveal';
-    revealBtn.textContent = '👁️ Reveal';
+    revealBtn.textContent = 'Reveal';
     revealBtn.onclick = () => toggleReveal(wordObj.id, true);
 
     const hideBtn = document.createElement('button');
     hideBtn.className = 'btn btn-hide';
-    hideBtn.textContent = '🙈 Hide';
+    hideBtn.textContent = 'Hide';
     hideBtn.style.display = 'none';
     hideBtn.onclick = () => toggleReveal(wordObj.id, false);
 
@@ -87,28 +87,30 @@ function playPronunciation(word, button) {
     const audio = new Audio(audioPath);
 
     button.disabled = true;
-    button.textContent = '▶️ Playing...';
+    const originalText = button.textContent;
+    button.textContent = 'Playing...';
 
     audio.play().catch(error => {
-        console.warn(`Audio file not found for "${word}":`, error);
-        button.textContent = '🔊 No Audio';
+        console.error(`Audio error for "${word}":`, error);
+        button.textContent = 'No Audio';
         setTimeout(() => {
-            button.textContent = '🔊 Play Pronunciation';
+            button.textContent = originalText;
             button.disabled = false;
-        }, 2000);
+        }, 1500);
     });
 
     audio.onended = () => {
-        button.textContent = '🔊 Play Pronunciation';
+        button.textContent = originalText;
         button.disabled = false;
     };
 
     audio.onerror = () => {
-        button.textContent = '🔊 No Audio';
+        console.error(`Audio file not found: ${audioPath}`);
+        button.textContent = 'No Audio';
         setTimeout(() => {
-            button.textContent = '🔊 Play Pronunciation';
+            button.textContent = originalText;
             button.disabled = false;
-        }, 2000);
+        }, 1500);
     };
 }
 
@@ -147,7 +149,7 @@ function toggleReveal(wordId, reveal) {
 
 function updateStats() {
     const wordCount = document.getElementById('word-count');
-    wordCount.textContent = `${wordsData.length} words total`;
+    wordCount.textContent = `${wordsData.length} words`;
 }
 
 document.addEventListener('DOMContentLoaded', loadWords);
