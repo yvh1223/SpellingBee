@@ -1,0 +1,265 @@
+/* ABOUTME: Styling for SpellingBee practice website */
+/* ABOUTME: Provides calm, modern design with soft teal/blue/grey colors and large readable typography */
+
+:root {
+    --primary-color: #4A90A4;
+    --secondary-color: #67B7D1;
+    --background-color: #F5F8FA;
+    --card-background: #FFFFFF;
+    --text-primary: #2C3E50;
+    --text-secondary: #607D8B;
+    --accent-color: #5FB3CC;
+    --border-color: #E0E8EC;
+    --shadow: 0 2px 8px rgba(74, 144, 164, 0.1);
+    --shadow-hover: 0 4px 12px rgba(74, 144, 164, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.stats {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.word-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.word-card {
+    background-color: var(--card-background);
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--accent-color);
+}
+
+.word-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.word-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.word-number {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    background-color: var(--background-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.word-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-play {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-play:hover {
+    background-color: #3D7A8C;
+}
+
+.btn-play:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btn-reveal {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn-reveal:hover {
+    background-color: #5AA5BE;
+}
+
+.btn-hide {
+    background-color: var(--text-secondary);
+    color: white;
+}
+
+.btn-hide:hover {
+    background-color: #546E7A;
+}
+
+.word-display {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--background-color);
+}
+
+.word-masked {
+    color: var(--border-color);
+    letter-spacing: 8px;
+    user-select: none;
+}
+
+.word-revealed {
+    color: var(--text-primary);
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px 20px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .word-card {
+        padding: 20px;
+    }
+
+    .word-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .word-actions {
+        justify-content: center;
+    }
+
+    .word-display {
+        font-size: 1.5rem;
+        min-height: 50px;
+        padding: 16px;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .word-display {
+        font-size: 1.3rem;
+    }
+
+    .word-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
