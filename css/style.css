@@ -129,25 +129,25 @@ main {
 
 .word-display {
     text-align: center;
-    padding: 16px 12px;
+    padding: 20px 16px;
     background: #f5f5f7;
     border-radius: 6px;
-    min-height: 56px;
+    min-height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .word-masked {
-    font-size: 24px;
-    letter-spacing: 8px;
+    font-size: 32px;
+    letter-spacing: 10px;
     color: #d2d2d7;
     user-select: none;
     font-weight: 300;
 }
 
 .word-revealed {
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 600;
     color: #1d1d1f;
     animation: fadeIn 0.3s ease;
