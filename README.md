@@ -4,6 +4,8 @@ A minimalist, pronunciation-driven spelling practice website for grades 6-8.
 
 **🌐 Live Site:** https://yvh1223.github.io/SpellingBee/
 
+![SpellingBee Interface](images/screenshot.png)
+
 ## Features
 
 - 145 pronunciation-driven spelling words
