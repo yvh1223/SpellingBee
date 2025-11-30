@@ -1,0 +1,612 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "word": "almanac"
+    },
+    {
+      "id": 2,
+      "word": "hippies"
+    },
+    {
+      "id": 3,
+      "word": "samosas"
+    },
+    {
+      "id": 4,
+      "word": "campaign"
+    },
+    {
+      "id": 5,
+      "word": "pistachio"
+    },
+    {
+      "id": 6,
+      "word": "mosque"
+    },
+    {
+      "id": 7,
+      "word": "zombielike"
+    },
+    {
+      "id": 8,
+      "word": "warlock"
+    },
+    {
+      "id": 9,
+      "word": "colossus"
+    },
+    {
+      "id": 10,
+      "word": "convulsively"
+    },
+    {
+      "id": 11,
+      "word": "dimensional"
+    },
+    {
+      "id": 12,
+      "word": "garishly"
+    },
+    {
+      "id": 13,
+      "word": "graffitist"
+    },
+    {
+      "id": 14,
+      "word": "Everest"
+    },
+    {
+      "id": 15,
+      "word": "dexterity"
+    },
+    {
+      "id": 16,
+      "word": "cavorting"
+    },
+    {
+      "id": 17,
+      "word": "marauder"
+    },
+    {
+      "id": 18,
+      "word": "conscience"
+    },
+    {
+      "id": 19,
+      "word": "battlements"
+    },
+    {
+      "id": 20,
+      "word": "deferential"
+    },
+    {
+      "id": 21,
+      "word": "albatross"
+    },
+    {
+      "id": 22,
+      "word": "khaki"
+    },
+    {
+      "id": 23,
+      "word": "opalescent"
+    },
+    {
+      "id": 24,
+      "word": "asphalt"
+    },
+    {
+      "id": 25,
+      "word": "Yiddish"
+    },
+    {
+      "id": 26,
+      "word": "talcum"
+    },
+    {
+      "id": 27,
+      "word": "tranquilizer"
+    },
+    {
+      "id": 28,
+      "word": "equestrian"
+    },
+    {
+      "id": 29,
+      "word": "plaited"
+    },
+    {
+      "id": 30,
+      "word": "monsieur"
+    },
+    {
+      "id": 31,
+      "word": "manticores"
+    },
+    {
+      "id": 32,
+      "word": "prestigious"
+    },
+    {
+      "id": 33,
+      "word": "fraidycat"
+    },
+    {
+      "id": 34,
+      "word": "guttural"
+    },
+    {
+      "id": 35,
+      "word": "lo mein"
+    },
+    {
+      "id": 36,
+      "word": "courier"
+    },
+    {
+      "id": 37,
+      "word": "sans serif"
+    },
+    {
+      "id": 38,
+      "word": "psyche"
+    },
+    {
+      "id": 39,
+      "word": "stucco"
+    },
+    {
+      "id": 40,
+      "word": "Frankenstein"
+    },
+    {
+      "id": 41,
+      "word": "schema"
+    },
+    {
+      "id": 42,
+      "word": "et cetera"
+    },
+    {
+      "id": 43,
+      "word": "vidimus"
+    },
+    {
+      "id": 44,
+      "word": "delphine"
+    },
+    {
+      "id": 45,
+      "word": "slough"
+    },
+    {
+      "id": 46,
+      "word": "archipelago"
+    },
+    {
+      "id": 47,
+      "word": "serape"
+    },
+    {
+      "id": 48,
+      "word": "sarape"
+    },
+    {
+      "id": 49,
+      "word": "puissance"
+    },
+    {
+      "id": 50,
+      "word": "pinioning"
+    },
+    {
+      "id": 51,
+      "word": "chignon"
+    },
+    {
+      "id": 52,
+      "word": "pheromone"
+    },
+    {
+      "id": 53,
+      "word": "galleon"
+    },
+    {
+      "id": 54,
+      "word": "magnanimous"
+    },
+    {
+      "id": 55,
+      "word": "chartreuse"
+    },
+    {
+      "id": 56,
+      "word": "wainscoting"
+    },
+    {
+      "id": 57,
+      "word": "Nehru"
+    },
+    {
+      "id": 58,
+      "word": "hesitate"
+    },
+    {
+      "id": 59,
+      "word": "scorcher"
+    },
+    {
+      "id": 60,
+      "word": "scavenger"
+    },
+    {
+      "id": 61,
+      "word": "fragments"
+    },
+    {
+      "id": 62,
+      "word": "deflated"
+    },
+    {
+      "id": 63,
+      "word": "unleash"
+    },
+    {
+      "id": 64,
+      "word": "ration"
+    },
+    {
+      "id": 65,
+      "word": "cosmetics"
+    },
+    {
+      "id": 66,
+      "word": "crawdad"
+    },
+    {
+      "id": 67,
+      "word": "frustration"
+    },
+    {
+      "id": 68,
+      "word": "unruly"
+    },
+    {
+      "id": 69,
+      "word": "mascot"
+    },
+    {
+      "id": 70,
+      "word": "moustache"
+    },
+    {
+      "id": 71,
+      "word": "mustache"
+    },
+    {
+      "id": 72,
+      "word": "artifacts"
+    },
+    {
+      "id": 73,
+      "word": "artefacts"
+    },
+    {
+      "id": 74,
+      "word": "perfume"
+    },
+    {
+      "id": 75,
+      "word": "sinister"
+    },
+    {
+      "id": 76,
+      "word": "tuxedo"
+    },
+    {
+      "id": 77,
+      "word": "discoveries"
+    },
+    {
+      "id": 78,
+      "word": "lurches"
+    },
+    {
+      "id": 79,
+      "word": "language"
+    },
+    {
+      "id": 80,
+      "word": "prognosis"
+    },
+    {
+      "id": 81,
+      "word": "Buffalo"
+    },
+    {
+      "id": 82,
+      "word": "sequins"
+    },
+    {
+      "id": 83,
+      "word": "gallop"
+    },
+    {
+      "id": 84,
+      "word": "fabulous"
+    },
+    {
+      "id": 85,
+      "word": "lanky"
+    },
+    {
+      "id": 86,
+      "word": "fluently"
+    },
+    {
+      "id": 87,
+      "word": "mysterious"
+    },
+    {
+      "id": 88,
+      "word": "brandished"
+    },
+    {
+      "id": 89,
+      "word": "sardines"
+    },
+    {
+      "id": 90,
+      "word": "anguish"
+    },
+    {
+      "id": 91,
+      "word": "conical"
+    },
+    {
+      "id": 92,
+      "word": "rickety"
+    },
+    {
+      "id": 93,
+      "word": "lilt"
+    },
+    {
+      "id": 94,
+      "word": "pediatric"
+    },
+    {
+      "id": 95,
+      "word": "porridge"
+    },
+    {
+      "id": 96,
+      "word": "democracy"
+    },
+    {
+      "id": 97,
+      "word": "rummage"
+    },
+    {
+      "id": 98,
+      "word": "beige"
+    },
+    {
+      "id": 99,
+      "word": "ancestral"
+    },
+    {
+      "id": 100,
+      "word": "grimace"
+    },
+    {
+      "id": 101,
+      "word": "gaunt"
+    },
+    {
+      "id": 102,
+      "word": "enormous"
+    },
+    {
+      "id": 103,
+      "word": "geranium"
+    },
+    {
+      "id": 104,
+      "word": "nautical"
+    },
+    {
+      "id": 105,
+      "word": "dubious"
+    },
+    {
+      "id": 106,
+      "word": "ebony"
+    },
+    {
+      "id": 107,
+      "word": "foreign"
+    },
+    {
+      "id": 108,
+      "word": "paltry"
+    },
+    {
+      "id": 109,
+      "word": "verdict"
+    },
+    {
+      "id": 110,
+      "word": "garbled"
+    },
+    {
+      "id": 111,
+      "word": "encourages"
+    },
+    {
+      "id": 112,
+      "word": "imitation"
+    },
+    {
+      "id": 113,
+      "word": "miniature"
+    },
+    {
+      "id": 114,
+      "word": "receptionist"
+    },
+    {
+      "id": 115,
+      "word": "preamble"
+    },
+    {
+      "id": 116,
+      "word": "plausible"
+    },
+    {
+      "id": 117,
+      "word": "reprimanding"
+    },
+    {
+      "id": 118,
+      "word": "commotion"
+    },
+    {
+      "id": 119,
+      "word": "oblivion"
+    },
+    {
+      "id": 120,
+      "word": "immigrants"
+    },
+    {
+      "id": 121,
+      "word": "steeple"
+    },
+    {
+      "id": 122,
+      "word": "spectators"
+    },
+    {
+      "id": 123,
+      "word": "lanyards"
+    },
+    {
+      "id": 124,
+      "word": "suspicious"
+    },
+    {
+      "id": 125,
+      "word": "parchment"
+    },
+    {
+      "id": 126,
+      "word": "ramshackle"
+    },
+    {
+      "id": 127,
+      "word": "fugitive"
+    },
+    {
+      "id": 128,
+      "word": "heron"
+    },
+    {
+      "id": 129,
+      "word": "dissolving"
+    },
+    {
+      "id": 130,
+      "word": "nomad"
+    },
+    {
+      "id": 131,
+      "word": "billowed"
+    },
+    {
+      "id": 132,
+      "word": "skewer"
+    },
+    {
+      "id": 133,
+      "word": "Berlin"
+    },
+    {
+      "id": 134,
+      "word": "lunacy"
+    },
+    {
+      "id": 135,
+      "word": "conjure"
+    },
+    {
+      "id": 136,
+      "word": "bracken"
+    },
+    {
+      "id": 137,
+      "word": "noggin"
+    },
+    {
+      "id": 138,
+      "word": "neon"
+    },
+    {
+      "id": 139,
+      "word": "rakish"
+    },
+    {
+      "id": 140,
+      "word": "hypnosis"
+    },
+    {
+      "id": 141,
+      "word": "rotunda"
+    },
+    {
+      "id": 142,
+      "word": "gusto"
+    },
+    {
+      "id": 143,
+      "word": "toiletries"
+    },
+    {
+      "id": 144,
+      "word": "gleaned"
+    },
+    {
+      "id": 145,
+      "word": "jeered"
+    },
+    {
+      "id": 146,
+      "word": "winsome"
+    },
+    {
+      "id": 147,
+      "word": "prattling"
+    },
+    {
+      "id": 148,
+      "word": "galore"
+    },
+    {
+      "id": 149,
+      "word": "emporium"
+    },
+    {
+      "id": 150,
+      "word": "atrium"
+    },
+    {
+      "id": 151,
+      "word": "eccentric"
+    },
+    {
+      "id": 152,
+      "word": "savant"
+    }
+  ]
+}

@@ -1,35 +1,58 @@
 // ABOUTME: Main application logic for SpellingBee practice website
 // ABOUTME: Handles loading words, pronunciation playback, and reveal/hide functionality
 
-let wordsData = [];
+let wordsData = {
+    '1B': [],
+    '2B': [],
+    '3B': []
+};
 
 async function loadWords() {
     try {
-        const response = await fetch('words.json');
-        const data = await response.json();
-        wordsData = data.words;
-        renderWords();
+        // Load all three bee levels
+        const responses = await Promise.all([
+            fetch('data/words_1B.json'),
+            fetch('data/words_2B.json'),
+            fetch('data/words_3B.json')
+        ]);
+
+        const [data1B, data2B, data3B] = await Promise.all(
+            responses.map(r => r.json())
+        );
+
+        wordsData['1B'] = data1B.words;
+        wordsData['2B'] = data2B.words;
+        wordsData['3B'] = data3B.words;
+
+        renderWords('1B');
+        renderWords('2B');
+        renderWords('3B');
         updateStats();
     } catch (error) {
         console.error('Error loading words:', error);
-        document.getElementById('word-list').innerHTML = '<p style="text-align: center; color: #86868b;">Error loading words. Please refresh.</p>';
+        alert('Error loading words. Please refresh the page.');
     }
 }
 
-function renderWords() {
-    const wordList = document.getElementById('word-list');
+function renderWords(beeLevel) {
+    const wordList = document.getElementById(`word-list-${beeLevel}`);
+    if (!wordList) {
+        console.error(`word-list-${beeLevel} element not found`);
+        return;
+    }
     wordList.innerHTML = '';
 
-    wordsData.forEach(wordObj => {
-        const wordCard = createWordCard(wordObj);
+    const words = wordsData[beeLevel];
+    words.forEach(wordObj => {
+        const wordCard = createWordCard(wordObj, beeLevel);
         wordList.appendChild(wordCard);
     });
 }
 
-function createWordCard(wordObj) {
+function createWordCard(wordObj, beeLevel) {
     const card = document.createElement('div');
     card.className = 'word-card';
-    card.id = `word-${wordObj.id}`;
+    card.id = `word-${beeLevel}-${wordObj.id}`;
 
     const header = document.createElement('div');
     header.className = 'word-header';
@@ -44,18 +67,18 @@ function createWordCard(wordObj) {
     const playBtn = document.createElement('button');
     playBtn.className = 'btn btn-play';
     playBtn.textContent = 'Play';
-    playBtn.onclick = () => playPronunciation(wordObj.word, playBtn);
+    playBtn.onclick = () => playPronunciation(wordObj.word, beeLevel, playBtn);
 
     const revealBtn = document.createElement('button');
     revealBtn.className = 'btn btn-reveal';
     revealBtn.textContent = 'Reveal';
-    revealBtn.onclick = () => toggleReveal(wordObj.id, true);
+    revealBtn.onclick = () => toggleReveal(beeLevel, wordObj.id, true);
 
     const hideBtn = document.createElement('button');
     hideBtn.className = 'btn btn-hide';
     hideBtn.textContent = 'Hide';
     hideBtn.style.display = 'none';
-    hideBtn.onclick = () => toggleReveal(wordObj.id, false);
+    hideBtn.onclick = () => toggleReveal(beeLevel, wordObj.id, false);
 
     actions.appendChild(playBtn);
     actions.appendChild(revealBtn);
@@ -66,7 +89,7 @@ function createWordCard(wordObj) {
 
     const wordDisplay = document.createElement('div');
     wordDisplay.className = 'word-display';
-    wordDisplay.id = `display-${wordObj.id}`;
+    wordDisplay.id = `display-${beeLevel}-${wordObj.id}`;
 
     const maskedWord = document.createElement('span');
     maskedWord.className = 'word-masked';
@@ -80,9 +103,9 @@ function createWordCard(wordObj) {
     return card;
 }
 
-function playPronunciation(word, button) {
+function playPronunciation(word, beeLevel, button) {
     const audioFileName = sanitizeFileName(word);
-    const audioPath = `audio/${audioFileName}.mp3`;
+    const audioPath = `audio/${beeLevel}/${audioFileName}.mp3`;
 
     const audio = new Audio(audioPath);
 
@@ -127,12 +150,12 @@ function sanitizeFileName(word) {
         .replace(/[^a-z0-9_]/g, '');
 }
 
-function toggleReveal(wordId, reveal) {
-    const wordObj = wordsData.find(w => w.id === wordId);
+function toggleReveal(beeLevel, wordId, reveal) {
+    const wordObj = wordsData[beeLevel].find(w => w.id === wordId);
     if (!wordObj) return;
 
-    const displayElement = document.getElementById(`display-${wordId}`);
-    const wordCard = document.getElementById(`word-${wordId}`);
+    const displayElement = document.getElementById(`display-${beeLevel}-${wordId}`);
+    const wordCard = document.getElementById(`word-${beeLevel}-${wordId}`);
     const revealBtn = wordCard.querySelector('.btn-reveal');
     const hideBtn = wordCard.querySelector('.btn-hide');
 
@@ -148,8 +171,34 @@ function toggleReveal(wordId, reveal) {
 }
 
 function updateStats() {
+    const totalWords = wordsData['1B'].length + wordsData['2B'].length + wordsData['3B'].length;
     const wordCount = document.getElementById('word-count');
-    wordCount.textContent = `${wordsData.length} words`;
+    wordCount.textContent = `${totalWords} words total (1B: ${wordsData['1B'].length}, 2B: ${wordsData['2B'].length}, 3B: ${wordsData['3B'].length})`;
 }
 
-document.addEventListener('DOMContentLoaded', loadWords);
+function initializeSections() {
+    const sections = document.querySelectorAll('.bee-section');
+
+    sections.forEach(section => {
+        const header = section.querySelector('.section-header');
+        const toggleBtn = section.querySelector('.toggle-btn');
+        const content = section.querySelector('.section-content');
+
+        header.addEventListener('click', () => {
+            const isCollapsed = content.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                content.classList.remove('collapsed');
+                toggleBtn.classList.add('expanded');
+            } else {
+                content.classList.add('collapsed');
+                toggleBtn.classList.remove('expanded');
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initializeSections();
+    loadWords();
+});
