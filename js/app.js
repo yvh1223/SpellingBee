@@ -7,22 +7,28 @@ let wordsData = {
     '3B': []
 };
 
+let newWords3B = [];
+
 async function loadWords() {
     try {
         // Load all three bee levels
         const responses = await Promise.all([
             fetch('data/words_1B.json'),
             fetch('data/words_2B.json'),
-            fetch('data/words_3B.json')
+            fetch('data/words_3B.json'),
+            fetch('data/words_3B_new.json')
         ]);
 
-        const [data1B, data2B, data3B] = await Promise.all(
+        const [data1B, data2B, data3B, data3BNew] = await Promise.all(
             responses.map(r => r.json())
         );
 
         wordsData['1B'] = data1B.words;
         wordsData['2B'] = data2B.words;
         wordsData['3B'] = data3B.words;
+
+        // Store new words for highlighting
+        newWords3B = data3BNew.words.map(w => w.word.toLowerCase());
 
         renderWords('1B');
         renderWords('2B');
@@ -53,6 +59,11 @@ function createWordCard(wordObj, beeLevel) {
     const card = document.createElement('div');
     card.className = 'word-card';
     card.id = `word-${beeLevel}-${wordObj.id}`;
+
+    // Add special highlight for newly added words in 3B
+    if (beeLevel === '3B' && newWords3B.includes(wordObj.word.toLowerCase())) {
+        card.classList.add('word-card-new');
+    }
 
     const header = document.createElement('div');
     header.className = 'word-header';

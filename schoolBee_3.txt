@@ -53,7 +53,6 @@ maquisards
 Aubusson
 Charolais
 Charollais
-
 gangly
 swaggering
 chimneys
@@ -65,6 +64,7 @@ whittled
 depots
 fiberglass
 salvaged
+fissures
 enthusiastic
 discipline
 unfamiliar
@@ -84,6 +84,8 @@ repugnant
 invincible
 renowned
 parachute
+mincemeat
+labyrinthine
 laborious
 appointment
 foreseeable
@@ -91,10 +93,13 @@ ratify
 scalpel
 reclusive
 compassionate
+burlap
+alkali
 bulletin
 alfalfa
 officially
 crematorium
+haymarket
 bayonet
 amicable
 exuberant
@@ -103,6 +108,7 @@ equations
 assignment
 ultimatum
 whinnying
+squadron
 squalor
 memoirs
 cylinders
@@ -110,6 +116,7 @@ ominous
 muffler
 syndrome
 premises
+salient
 safari
 lasagna
 substantially
@@ -137,7 +144,10 @@ begrudge
 contentious
 precocious
 ensemble
+cadre
 cajolery
+lacrosse
+sluice
 vigilance
 residuals
 boutique
