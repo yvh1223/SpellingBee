@@ -196,9 +196,8 @@ function initializeSections() {
         const content = section.querySelector('.section-content');
         const masterRevealBtn = section.querySelector('.master-reveal-btn');
 
-        // Prevent section expand/collapse when clicking action buttons
-        toggleBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
+        // Click anywhere on header to expand/collapse
+        header.addEventListener('click', () => {
             const isCollapsed = content.classList.contains('collapsed');
 
             if (isCollapsed) {
@@ -210,24 +209,10 @@ function initializeSections() {
             }
         });
 
-        // Master reveal/hide button
+        // Prevent section expand/collapse when clicking action buttons
         masterRevealBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleMasterReveal(masterRevealBtn);
-        });
-
-        // Click on h2 to expand/collapse
-        const h2 = header.querySelector('h2');
-        h2.addEventListener('click', () => {
-            const isCollapsed = content.classList.contains('collapsed');
-
-            if (isCollapsed) {
-                content.classList.remove('collapsed');
-                toggleBtn.classList.add('expanded');
-            } else {
-                content.classList.add('collapsed');
-                toggleBtn.classList.remove('expanded');
-            }
         });
     });
 }

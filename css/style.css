@@ -146,6 +146,7 @@ main {
     user-select: none;
     background: var(--bg-tertiary);
     transition: background 0.2s;
+    cursor: pointer;
 }
 
 .section-header:hover {
