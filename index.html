@@ -10,8 +10,14 @@
     <header>
         <div class="header-content">
             <div class="bee-icon">🐝</div>
-            <h1>SpellingBee</h1>
+            <div class="header-text">
+                <h1>SpellingBee</h1>
+                <p class="tagline">Practice makes perfect - Good Luck!</p>
+            </div>
             <p class="subtitle"><span id="word-count">448 words total</span></p>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
         </div>
     </header>
 
@@ -21,7 +27,10 @@
             <div class="bee-section" data-section="1B">
                 <div class="section-header">
                     <h2>1B - School Spelling Bee</h2>
-                    <button class="toggle-btn" aria-label="Expand 1B section">▼</button>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="1B" aria-label="Reveal all 1B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 1B section">▼</button>
+                    </div>
                 </div>
                 <div class="section-content collapsed">
                     <div id="word-list-1B" class="word-list">
@@ -34,7 +43,10 @@
             <div class="bee-section" data-section="2B">
                 <div class="section-header">
                     <h2>2B - School Spelling Bee</h2>
-                    <button class="toggle-btn" aria-label="Expand 2B section">▼</button>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="2B" aria-label="Reveal all 2B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 2B section">▼</button>
+                    </div>
                 </div>
                 <div class="section-content collapsed">
                     <div id="word-list-2B" class="word-list">
@@ -47,7 +59,10 @@
             <div class="bee-section" data-section="3B">
                 <div class="section-header">
                     <h2>3B - School Spelling Bee</h2>
-                    <button class="toggle-btn" aria-label="Expand 3B section">▼</button>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="3B" aria-label="Reveal all 3B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 3B section">▼</button>
+                    </div>
                 </div>
                 <div class="section-content collapsed">
                     <div id="word-list-3B" class="word-list">

@@ -1,6 +1,32 @@
 /* ABOUTME: Minimalist styling for SpellingBee practice website */
 /* ABOUTME: Clean, focused design inspired by Apple's simplicity principles */
 
+:root {
+    --bg-primary: #fafafa;
+    --bg-secondary: white;
+    --bg-tertiary: #f5f5f7;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --border-color: var(--border-color);
+    --border-hover: #d2d2d7;
+    --shadow-sm: rgba(0,0,0,0.02);
+    --shadow-md: rgba(0,0,0,0.04);
+    --shadow-lg: rgba(0,0,0,0.06);
+}
+
+body.dark-theme {
+    --bg-primary: #1c1c1e;
+    --bg-secondary: #2c2c2e;
+    --bg-tertiary: #3a3a3c;
+    --text-primary: #f5f5f7;
+    --text-secondary: #98989d;
+    --border-color: #38383a;
+    --border-hover: #48484a;
+    --shadow-sm: rgba(0,0,0,0.3);
+    --shadow-md: rgba(0,0,0,0.4);
+    --shadow-lg: rgba(0,0,0,0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,19 +35,21 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-    background: #fafafa;
-    color: #1d1d1f;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
+    transition: background 0.3s, color 0.3s;
 }
 
 header {
-    background: white;
-    border-bottom: 1px solid #e8e8ed;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    box-shadow: 0 1px 3px var(--shadow-sm);
+    transition: background 0.3s, border-color 0.3s;
 }
 
 .header-content {
@@ -38,17 +66,51 @@ header {
     line-height: 1;
 }
 
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 h1 {
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
 
+.tagline {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-style: italic;
+}
+
 .subtitle {
     font-size: 14px;
-    color: #86868b;
+    color: var(--text-secondary);
     font-weight: 400;
-    margin-left: auto;
+    flex: 1;
+}
+
+.theme-toggle-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--bg-secondary);
+    border-color: var(--border-hover);
+    transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+    transform: scale(0.95);
 }
 
 main {
@@ -64,9 +126,9 @@ main {
 }
 
 .bee-section {
-    background: white;
+    background: var(--bg-secondary);
     border-radius: 12px;
-    border: 1px solid #e8e8ed;
+    border: 1px solid var(--border-color);
     overflow: hidden;
     transition: all 0.3s;
 }
@@ -81,21 +143,51 @@ main {
     align-items: center;
     justify-content: space-between;
     padding: 20px 24px;
-    cursor: pointer;
     user-select: none;
-    background: #fafafa;
+    background: var(--bg-tertiary);
     transition: background 0.2s;
 }
 
 .section-header:hover {
-    background: #f5f5f7;
+    background: var(--bg-tertiary);
 }
 
 .section-header h2 {
     font-size: 22px;
     font-weight: 600;
     letter-spacing: -0.3px;
-    color: #1d1d1f;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.master-reveal-btn {
+    background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 122, 255, 0.2);
+}
+
+.master-reveal-btn:hover {
+    background: linear-gradient(135deg, #0051d5 0%, #003dad 100%);
+    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.master-reveal-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 122, 255, 0.2);
 }
 
 .toggle-btn {
@@ -104,7 +196,7 @@ main {
     font-size: 18px;
     cursor: pointer;
     transition: transform 0.3s;
-    color: #86868b;
+    color: var(--text-secondary);
     padding: 8px;
 }
 
@@ -129,7 +221,7 @@ main {
 
 .empty-message {
     text-align: center;
-    color: #86868b;
+    color: var(--text-secondary);
     font-size: 16px;
     padding: 40px 0;
 }
@@ -142,10 +234,10 @@ main {
 }
 
 .word-card {
-    background: white;
+    background: var(--bg-secondary);
     border-radius: 8px;
     padding: 14px 16px;
-    border: 1px solid #e8e8ed;
+    border: 1px solid var(--border-color);
     transition: all 0.2s;
     display: flex;
     flex-direction: column;
@@ -177,7 +269,7 @@ main {
 
 .word-number {
     font-size: 12px;
-    color: #86868b;
+    color: var(--text-secondary);
     font-weight: 600;
     min-width: 28px;
 }
@@ -195,8 +287,8 @@ main {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    background: #f5f5f7;
-    color: #1d1d1f;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
 }
 
 .btn:hover {
@@ -213,13 +305,13 @@ main {
 }
 
 .btn-play:disabled:hover {
-    background: #f5f5f7;
+    background: var(--bg-tertiary);
 }
 
 .word-display {
     text-align: center;
     padding: 20px 16px;
-    background: #f5f5f7;
+    background: var(--bg-tertiary);
     border-radius: 6px;
     min-height: 72px;
     display: flex;
@@ -238,7 +330,7 @@ main {
 .word-revealed {
     font-size: 34px;
     font-weight: 600;
-    color: #1d1d1f;
+    color: var(--text-primary);
     animation: fadeIn 0.3s ease;
 }
 

@@ -194,8 +194,31 @@ function initializeSections() {
         const header = section.querySelector('.section-header');
         const toggleBtn = section.querySelector('.toggle-btn');
         const content = section.querySelector('.section-content');
+        const masterRevealBtn = section.querySelector('.master-reveal-btn');
 
-        header.addEventListener('click', () => {
+        // Prevent section expand/collapse when clicking action buttons
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isCollapsed = content.classList.contains('collapsed');
+
+            if (isCollapsed) {
+                content.classList.remove('collapsed');
+                toggleBtn.classList.add('expanded');
+            } else {
+                content.classList.add('collapsed');
+                toggleBtn.classList.remove('expanded');
+            }
+        });
+
+        // Master reveal/hide button
+        masterRevealBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMasterReveal(masterRevealBtn);
+        });
+
+        // Click on h2 to expand/collapse
+        const h2 = header.querySelector('h2');
+        h2.addEventListener('click', () => {
             const isCollapsed = content.classList.contains('collapsed');
 
             if (isCollapsed) {
@@ -209,7 +232,65 @@ function initializeSections() {
     });
 }
 
+function toggleMasterReveal(button) {
+    const beeLevel = button.getAttribute('data-level');
+    const isRevealing = button.textContent === 'Reveal All';
+
+    // Get all word cards for this level
+    const wordList = document.getElementById(`word-list-${beeLevel}`);
+    const wordCards = wordList.querySelectorAll('.word-card');
+
+    wordCards.forEach(card => {
+        const wordId = parseInt(card.id.split('-').pop());
+        const revealBtn = card.querySelector('.btn-reveal');
+        const hideBtn = card.querySelector('.btn-hide');
+        const displayElement = card.querySelector('.word-display');
+        const wordObj = wordsData[beeLevel].find(w => w.id === wordId);
+
+        if (!wordObj) return;
+
+        if (isRevealing) {
+            // Reveal this word
+            displayElement.innerHTML = `<span class="word-revealed">${wordObj.word}</span>`;
+            revealBtn.style.display = 'none';
+            hideBtn.style.display = 'inline-block';
+        } else {
+            // Hide this word
+            displayElement.innerHTML = `<span class="word-masked">${'•'.repeat(wordObj.word.length)}</span>`;
+            revealBtn.style.display = 'inline-block';
+            hideBtn.style.display = 'none';
+        }
+    });
+
+    // Toggle button text
+    button.textContent = isRevealing ? 'Hide All' : 'Reveal All';
+}
+
+function initializeThemeToggle() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleBtn.querySelector('.theme-icon');
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('spellingbee-theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.textContent = '☀️';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+
+        // Update icon
+        themeIcon.textContent = isDark ? '☀️' : '🌙';
+
+        // Save preference
+        localStorage.setItem('spellingbee-theme', isDark ? 'dark' : 'light');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeSections();
+    initializeThemeToggle();
     loadWords();
 });
