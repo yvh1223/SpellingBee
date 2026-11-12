@@ -2,10 +2,17 @@
 // ABOUTME: Handles loading words, pronunciation playback, and reveal/hide functionality
 
 let wordsData = {
+    '6th': [],
     '1B': [],
     '2B': [],
     '3B': []
 };
+
+// Sub-lists shown as headings inside a section (only 6th grade uses them)
+let wordGroups = {};
+
+// Levels without generated MP3 files use the browser's built-in voice instead
+let speechOnlyLevels = new Set();
 
 let newWords3B = [];
 
@@ -13,16 +20,22 @@ async function loadWords() {
     try {
         // Load all three bee levels
         const responses = await Promise.all([
+            fetch('data/words_6th.json'),
             fetch('data/words_1B.json'),
             fetch('data/words_2B.json'),
             fetch('data/words_3B.json'),
             fetch('data/words_3B_new.json')
         ]);
 
-        const [data1B, data2B, data3B, data3BNew] = await Promise.all(
+        const [data6th, data1B, data2B, data3B, data3BNew] = await Promise.all(
             responses.map(r => r.json())
         );
 
+        wordsData['6th'] = data6th.words;
+        wordGroups['6th'] = data6th.groups || [];
+        if (data6th.audioFiles === false) {
+            speechOnlyLevels.add('6th');
+        }
         wordsData['1B'] = data1B.words;
         wordsData['2B'] = data2B.words;
         wordsData['3B'] = data3B.words;
@@ -30,6 +43,7 @@ async function loadWords() {
         // Store new words for highlighting
         newWords3B = data3BNew.words.map(w => w.word.toLowerCase());
 
+        renderWords('6th');
         renderWords('1B');
         renderWords('2B');
         renderWords('3B');
@@ -49,10 +63,52 @@ function renderWords(beeLevel) {
     wordList.innerHTML = '';
 
     const words = wordsData[beeLevel];
+    const groups = wordGroups[beeLevel] || [];
+    let currentGroup = null;
+
     words.forEach(wordObj => {
+        if (groups.length && wordObj.group !== currentGroup) {
+            currentGroup = wordObj.group;
+            const group = groups.find(g => g.id === currentGroup);
+            if (group) {
+                wordList.appendChild(createGroupHeading(group));
+            }
+        }
         const wordCard = createWordCard(wordObj, beeLevel);
         wordList.appendChild(wordCard);
     });
+}
+
+function createGroupHeading(group) {
+    const heading = document.createElement('div');
+    heading.className = 'word-group-heading';
+
+    const name = document.createElement('h3');
+    name.textContent = group.name;
+
+    const meta = document.createElement('span');
+    meta.className = 'word-group-meta';
+    meta.textContent = `${group.count} words · ${group.source}`;
+
+    heading.appendChild(name);
+    heading.appendChild(meta);
+    return heading;
+}
+
+function renderRevealed(displayElement, wordObj) {
+    displayElement.innerHTML = '';
+
+    const revealed = document.createElement('span');
+    revealed.className = 'word-revealed';
+    revealed.textContent = wordObj.word;
+    displayElement.appendChild(revealed);
+
+    if (wordObj.alt) {
+        const alt = document.createElement('span');
+        alt.className = 'word-alt';
+        alt.textContent = `or ${wordObj.alt}` + (wordObj.altNote ? ` (${wordObj.altNote})` : '');
+        displayElement.appendChild(alt);
+    }
 }
 
 function createWordCard(wordObj, beeLevel) {
@@ -114,7 +170,41 @@ function createWordCard(wordObj, beeLevel) {
     return card;
 }
 
+function speakWord(word, button) {
+    const originalText = button.textContent;
+
+    if (!('speechSynthesis' in window)) {
+        button.textContent = 'No Audio';
+        setTimeout(() => { button.textContent = originalText; }, 1500);
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.85;
+
+    const reset = () => {
+        button.textContent = originalText;
+        button.disabled = false;
+    };
+
+    button.disabled = true;
+    button.textContent = 'Playing...';
+    utterance.onend = reset;
+    utterance.onerror = reset;
+    // Safety net: some browsers never fire onend
+    setTimeout(reset, 4000);
+
+    window.speechSynthesis.speak(utterance);
+}
+
 function playPronunciation(word, beeLevel, button) {
+    if (speechOnlyLevels.has(beeLevel)) {
+        speakWord(word, button);
+        return;
+    }
+
     const audioFileName = sanitizeFileName(word);
     const audioPath = `audio/${beeLevel}/${audioFileName}.mp3`;
 
@@ -171,7 +261,7 @@ function toggleReveal(beeLevel, wordId, reveal) {
     const hideBtn = wordCard.querySelector('.btn-hide');
 
     if (reveal) {
-        displayElement.innerHTML = `<span class="word-revealed">${wordObj.word}</span>`;
+        renderRevealed(displayElement, wordObj);
         revealBtn.style.display = 'none';
         hideBtn.style.display = 'inline-block';
     } else {
@@ -182,9 +272,11 @@ function toggleReveal(beeLevel, wordId, reveal) {
 }
 
 function updateStats() {
-    const totalWords = wordsData['1B'].length + wordsData['2B'].length + wordsData['3B'].length;
+    const levels = Object.keys(wordsData);
+    const totalWords = levels.reduce((sum, level) => sum + wordsData[level].length, 0);
+    const breakdown = levels.map(level => `${level}: ${wordsData[level].length}`).join(', ');
     const wordCount = document.getElementById('word-count');
-    wordCount.textContent = `${totalWords} words total (1B: ${wordsData['1B'].length}, 2B: ${wordsData['2B'].length}, 3B: ${wordsData['3B'].length})`;
+    wordCount.textContent = `${totalWords} words total (${breakdown})`;
 }
 
 function initializeSections() {
@@ -236,7 +328,7 @@ function toggleMasterReveal(button) {
 
         if (isRevealing) {
             // Reveal this word
-            displayElement.innerHTML = `<span class="word-revealed">${wordObj.word}</span>`;
+            renderRevealed(displayElement, wordObj);
             revealBtn.style.display = 'none';
             hideBtn.style.display = 'inline-block';
         } else {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# ABOUTME: Generates pronunciation audio files for all spelling bee levels (1B, 2B, 3B)
+# ABOUTME: Generates pronunciation audio files for all spelling bee levels (6th, 1B, 2B, 3B)
 # ABOUTME: Reads words from text files and creates organized MP3 files using OpenAI TTS
 
 import json
@@ -181,6 +181,14 @@ def main():
     # Process each bee level
     bee_configs = [
         {
+            # 6th grade data is maintained directly in JSON (it has sub-lists
+            # and alternate spellings), so it is read rather than regenerated.
+            'level': '6th',
+            'source_file': None,
+            'json_file': data_dir / 'words_6th.json',
+            'audio_dir': audio_root / '6th'
+        },
+        {
             'level': '1B',
             'source_file': project_root / 'schoolBee_1.txt',
             'json_file': data_dir / 'words_1B.json',
@@ -209,14 +217,20 @@ def main():
             json_file = config['json_file']
             audio_dir = config['audio_dir']
 
-            # Parse words from text file
-            print(f"\nParsing {source_file.name}...")
-            words_list = parse_word_file(source_file)
-            print(f"Found {len(words_list)} words")
+            if source_file is None:
+                print(f"\nReading {json_file.name}...")
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    words_data = json.load(f)
+                print(f"Found {len(words_data['words'])} words")
+            else:
+                # Parse words from text file
+                print(f"\nParsing {source_file.name}...")
+                words_list = parse_word_file(source_file)
+                print(f"Found {len(words_list)} words")
 
-            # Create JSON file
-            print(f"Creating {json_file.name}...")
-            words_data = create_words_json(words_list, json_file)
+                # Create JSON file
+                print(f"Creating {json_file.name}...")
+                words_data = create_words_json(words_list, json_file)
 
             # Generate audio files
             stats = generate_audio_for_bee(
@@ -230,6 +244,15 @@ def main():
             # Accumulate stats
             for key in total_stats:
                 total_stats[key] += stats[key]
+
+            # Once every 6th grade word has an MP3, switch the site from the
+            # browser voice to the generated files
+            if source_file is None and stats['failed'] == 0 and words_data.get('audioFiles') is False:
+                words_data['audioFiles'] = True
+                with open(json_file, 'w', encoding='utf-8') as f:
+                    json.dump(words_data, f, indent=2, ensure_ascii=False)
+                    f.write('\n')
+                print(f"Updated {json_file.name}: audioFiles = true")
 
         # Print final summary
         print(f"\n{'='*70}")

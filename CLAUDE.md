@@ -28,6 +28,10 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 - **2B (Intermediate)**: `schoolBee_2.txt` - 152 words (e.g., "almanac", "archipelago", "eccentric")
 - **3B (Advanced)**: `schoolBee_3.txt` - 156 words (e.g., "apocalypse", "silhouette", "tuberculosis")
 - Total: 448 words with accented characters and special formatting
+- **6th Grade (2026-27)**: `data/words_6th.json` - 200 words transcribed from the 26-27 Classroom Spelling Bee Study List PDF, kept in source order
+  - List 1 = page 1 (50), List 2 = page 2 (50), List 3 = pages 3-4 (100); each word has a `group` field
+  - Variant spellings stored as `alt` + `altNote` (materialize/materialise, odorant/odourant, brazier/brasier, glycerin/glycerine, kerosene/kerosine)
+  - The JSON is the source of truth (no .txt file). `"audioFiles": false` makes the site use the browser's speechSynthesis; `generate_all_audio.py` writes `audio/6th/*.mp3` and flips it to `true` once all files exist
 - **3B New Words**: 11 words highlighted in yellow for focused practice
 
 ## Project Structure
@@ -47,6 +51,7 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
     words_2B.json               # 152 words with IDs
     words_3B.json               # 156 words with IDs
     words_3B_new.json           # 11 newly added 3B words for highlighting
+    words_6th.json              # 200 6th grade words (2026-27) with lists and alternate spellings
   generate_all_audio.py         # Multi-level audio generation script
   generate_audio.py             # [ARCHIVED] Old single-level script
   words.json                    # [ARCHIVED] Old single-level data

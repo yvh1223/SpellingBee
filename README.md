@@ -8,7 +8,10 @@ A minimalist, pronunciation-driven spelling practice website with three difficul
 
 ## Features
 
-- **448 pronunciation-driven spelling words** across three levels
+- **6th Grade (2026-27)**: 200 words from the Classroom Spelling Bee Study List, in three lists (50 / 50 / 100)
+  - Alternate spellings (British or also-accepted) appear under the word when revealed
+  - Pronounced by the browser's built-in voice until MP3s are generated with `generate_all_audio.py`
+- **448 pronunciation-driven spelling words** across three levels (2025-26)
   - **1B (Basic)**: 145 foundational words
   - **2B (Intermediate)**: 158 challenging words
   - **3B (Advanced)**: 145 school bee words
@@ -131,7 +134,8 @@ python generate_all_audio.py
 | 1B | Basic | 145 | Foundational spelling words (e.g., "tag", "elephant", "chocolate") |
 | 2B | Intermediate | 158 | Challenging words (e.g., "almanac", "archipelago", "eccentric") |
 | 3B | Advanced | 145 | School bee level (e.g., "apocalypse", "silhouette", "tuberculosis") |
-| **Total** | | **448** | |
+| 6th | 2026-27 Classroom Bee | 200 | Lists 1-3 (e.g., "sorceress", "newt", "Bildungsroman") |
+| **Total** | | **648** | |
 
 ## License
 
