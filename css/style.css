@@ -92,6 +92,38 @@ h1 {
     flex: 1;
 }
 
+.header-spacer {
+    flex: 1;
+}
+
+.header-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a6cdc;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.header-link:hover {
+    background: var(--bg-tertiary);
+}
+
+body.dark-theme .header-link {
+    color: #4b9bff;
+}
+
+/* Pulses a play button while its word is being spoken */
+.is-playing {
+    animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+}
+
 .theme-toggle-btn {
     background: var(--bg-tertiary);
     border: 1px solid var(--border-color);
@@ -347,41 +379,6 @@ main {
     font-style: italic;
     color: var(--text-secondary);
     animation: fadeIn 0.3s ease;
-}
-
-/* Sub-list headings inside a section (6th grade: List 1, 2, 3) */
-.word-group-heading {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 12px 2px 6px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.word-group-heading:not(:first-child) {
-    margin-top: 16px;
-}
-
-.word-group-heading h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-}
-
-.word-group-meta {
-    font-size: 13px;
-    color: var(--text-secondary);
-}
-
-/* Current school year section gets a warm accent */
-.bee-section-current {
-    border-color: #e8c978;
-}
-
-.bee-section-current .section-header {
-    border-left: 4px solid #e8b84a;
 }
 
 @keyframes fadeIn {

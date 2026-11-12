@@ -1,6 +1,6 @@
 # SpellingBee Practice
 
-A minimalist, pronunciation-driven spelling practice website with three difficulty levels for school spelling bee preparation.
+A calm, pronunciation-driven spelling practice website for the 6th grade 2026-27 Classroom Spelling Bee, with progress tracking and a practice mode.
 
 **🌐 Live Site:** https://yvh1223.github.io/SpellingBee/
 
@@ -8,19 +8,17 @@ A minimalist, pronunciation-driven spelling practice website with three difficul
 
 ## Features
 
-- **6th Grade (2026-27)**: 200 words from the Classroom Spelling Bee Study List, in three lists (50 / 50 / 100)
-  - Alternate spellings (British or also-accepted) appear under the word when revealed
-  - 200 MP3 pronunciations in `audio/6th` (same OpenAI TTS voice as the other levels)
-- **448 pronunciation-driven spelling words** across three levels (2025-26)
-  - **1B (Basic)**: 145 foundational words
-  - **2B (Intermediate)**: 158 challenging words
-  - **3B (Advanced)**: 145 school bee words
-- Audio playback for each word (OpenAI TTS - Alloy voice)
-- Collapsible sections for each difficulty level
-- Progressive reveal/hide functionality per word
-- Apple-inspired minimalist design
-- Fully responsive (mobile/tablet/desktop)
-- No tracking, ads, or logins
+- **200 words** from the 26-27 Classroom Spelling Bee Study List, in three collapsible lists (50 / 50 / 100)
+- **Progress tracking**: mark a word ✓ Got it or ⚑ Review; overall and per-list progress bars
+- **Filters**: All / Not done / Review / Done, so you can come back to just the tricky words
+- **Practice mode**: hear a word, type it (or spell it aloud and tap Show answer); right answers are marked done, misses are flagged for review with a missed count
+  - Pick Not done / Review / All, which lists, and 10 / 20 / all words; random order
+  - Slow playback, typo override, and a "practice missed words" round at the end
+- Alternate spellings (materialize/materialise, glycerin/glycerine, …) are accepted and shown with the answer
+- Progress saved in the browser, with **Save backup / Load backup** to move it between devices
+- MP3 pronunciation for every word (OpenAI TTS, Alloy voice), with the browser voice as a fallback
+- Light and dark themes, works on phones and tablets, no tracking, ads or logins
+- **Archive** page (`archive.html`) keeps last year's 1B / 2B / 3B lists (448 words)
 
 ## Quick Start
 
@@ -35,16 +33,22 @@ open index.html
 
 ```
 /SpellingBee
-  index.html                    # Landing page with collapsible sections
+  index.html                    # 6th grade page: progress, filters, lists, practice mode
+  archive.html                  # 2025-26 1B / 2B / 3B lists
   /css
-    style.css                   # Minimalist styling with smooth animations
+    style.css                   # Base styling and color tokens (both pages)
+    app.css                     # 6th grade page components
   /js
-    app.js                      # Multi-level word loading & playback logic
-  /audio                        # Organized by difficulty level
+    shared.js                   # Audio playback, theme toggle, safe storage
+    app.js                      # 6th grade page logic
+    archive.js                  # Archive page logic
+  /audio                        # Organized by list
+    /6th                        # 200 MP3 files for 6th grade words
     /1B                         # 145 MP3 files for basic words
     /2B                         # 158 MP3 files for intermediate words
     /3B                         # 145 MP3 files for advanced words
   /data                         # JSON word data
+    words_6th.json              # 6th grade words with lists and alternate spellings
     words_1B.json               # Basic level words
     words_2B.json               # Intermediate level words
     words_3B.json               # Advanced level words

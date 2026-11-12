@@ -5,7 +5,7 @@
 - DD: Desi Deadpool
 
 ## Project Overview
-Building a pronunciation-driven spelling practice website for Vihaan's School Spelling Bee. The focus is on simplicity, elegance, and a calm learning experience with support for three difficulty levels.
+Building a pronunciation-driven spelling practice website for Vihaan's School Spelling Bee. The focus is on simplicity, elegance, and a calm learning experience. The current focus is the **6th grade 2026-27** list on `index.html`; last year's 1B/2B/3B lists live on `archive.html`.
 
 ## Key Design Principles
 1. **Pronunciation First**: Each word has audio pronunciation that must be played
@@ -13,8 +13,9 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 3. **Calm UI**: Warm cream-based colors for light theme, dark mode for low-light environments
 4. **Offline-Capable**: Everything works locally with no external dependencies
 5. **Mobile-Friendly**: Responsive design for tablets and phones
-6. **Multi-Level Support**: Three difficulty levels (1B, 2B, 3B) with collapsible sections
-7. **Theme Support**: Light and dark themes with localStorage persistence
+6. **Track and Revisit**: Words can be marked done or flagged for review; progress persists per browser
+7. **Archive**: Previous years' lists stay available on a separate archive page
+8. **Theme Support**: Light and dark themes with localStorage persistence
 
 ## Technical Stack
 - Pure HTML5, CSS3, and vanilla JavaScript
@@ -37,11 +38,15 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 ## Project Structure
 ```
 /spellingbee
-  index.html                    # Main landing page with collapsible sections
+  index.html                    # 6th grade page: progress, filters, collapsible lists, practice mode
+  archive.html                  # 2025-26 1B/2B/3B lists (old multi-level page)
   /css
-    style.css                   # Apple-inspired minimalist styling
+    style.css                   # Base styling + color tokens (both pages)
+    app.css                     # 6th grade page components
   /js
-    app.js                      # Multi-level word loading and pronunciation logic
+    shared.js                   # SpellingBee.playWord / sanitizeFileName / storage / initThemeToggle
+    app.js                      # 6th grade page logic
+    archive.js                  # Archive page logic
   /audio                        # Organized audio files
     /1B                         # 140 MP3 files for 1B words
     /2B                         # 152 MP3 files for 2B words
@@ -79,6 +84,9 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 - Website with pronunciation-driven interface
 - All 448 audio files generated (1B: 140, 2B: 152, 3B: 156)
 - 6th grade (2026-27): 200 words in three lists, all 200 audio files generated
+- Progress tracking (done / review / missed count), filters, per-list progress, collapsible lists
+- Practice mode: type or spell aloud, auto-marks done/review, typo override, retry missed words
+- Progress backup/restore via JSON file; 1B/2B/3B moved to archive.html
 - Progressive reveal/hide functionality per word
 - Master "Reveal All/Hide All" toggle per section
 - Mobile-responsive design with warm, eye-friendly aesthetics
@@ -289,6 +297,18 @@ if (beeLevel === '3B' && newWords3B.includes(wordObj.word.toLowerCase())) {
 ```
 
 **Learning**: Separate data-driven approach is more maintainable than hardcoded lists.
+
+### 12. Progress Tracking on a Static Site
+**Challenge**: Track done / needs-review words with no backend (GitHub Pages).
+
+**Solution**:
+- `localStorage['spellingbee-6th-progress-v1'] = {version: 1, words: {"<word lowercase>": {s: 'done'|'review', m: missCount, t: timestamp}}}`
+- Keyed by the word text, not the id, so reordering the JSON doesn't scramble progress
+- Collapsed lists and the active filter are also remembered (`spellingbee-6th-collapsed-v1`, `spellingbee-6th-filter-v1`)
+- Save/Load backup downloads/uploads the same JSON. Needed because localStorage is per device and Safari can clear it for sites not visited for a while
+- All storage access is wrapped in try/catch (private browsing can throw)
+
+**Answer checking** (practice mode): case-insensitive, extra spaces ignored, accents optional (eclair = éclair), `alt` spelling accepted; hyphens and spaces between words still count.
 
 ## Key Files to Archive
 - `generate_audio.py` - Old single-level script (replaced by `generate_all_audio.py`)

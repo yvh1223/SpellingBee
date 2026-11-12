@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpellingBee Archive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="bee-icon">🐝</div>
+            <div class="header-text">
+                <h1>SpellingBee</h1>
+                <p class="tagline">Archive: 2025-26 School Spelling Bee lists</p>
+            </div>
+            <p class="subtitle"><span id="word-count">448 words total</span></p>
+            <a class="header-link" href="./">← 6th Grade</a>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="sections-container">
+            <!-- 1B Section -->
+            <div class="bee-section" data-section="1B">
+                <div class="section-header">
+                    <h2>1B - School Spelling Bee</h2>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="1B" aria-label="Reveal all 1B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 1B section">▼</button>
+                    </div>
+                </div>
+                <div class="section-content collapsed">
+                    <div id="word-list-1B" class="word-list">
+                        <!-- 140 words will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2B Section -->
+            <div class="bee-section" data-section="2B">
+                <div class="section-header">
+                    <h2>2B - School Spelling Bee</h2>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="2B" aria-label="Reveal all 2B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 2B section">▼</button>
+                    </div>
+                </div>
+                <div class="section-content collapsed">
+                    <div id="word-list-2B" class="word-list">
+                        <!-- 152 words will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3B Section -->
+            <div class="bee-section" data-section="3B">
+                <div class="section-header">
+                    <h2>3B - School Spelling Bee</h2>
+                    <div class="header-actions">
+                        <button class="master-reveal-btn" data-level="3B" aria-label="Reveal all 3B words">Reveal All</button>
+                        <button class="toggle-btn" aria-label="Expand 3B section">▼</button>
+                    </div>
+                </div>
+                <div class="section-content collapsed">
+                    <div id="word-list-3B" class="word-list">
+                        <!-- 156 words (11 newly added with highlight) will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/shared.js"></script>
+    <script src="js/archive.js"></script>
+</body>
+</html>

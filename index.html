@@ -3,92 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpellingBee Practice</title>
+    <meta name="theme-color" content="#f8f7f4">
+    <title>SpellingBee - 6th Grade</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="bee-icon">🐝</div>
+            <div class="bee-icon" aria-hidden="true">🐝</div>
             <div class="header-text">
                 <h1>SpellingBee</h1>
-                <p class="tagline">Practice makes perfect - Good Luck!</p>
+                <p class="tagline">6th Grade · 2026&#8209;27<span class="hide-sm"> Classroom Bee</span></p>
             </div>
-            <p class="subtitle"><span id="word-count">648 words total</span></p>
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+            <div class="header-spacer"></div>
+            <a class="header-link" href="archive.html">Archive</a>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to dark theme">
                 <span class="theme-icon">🌙</span>
             </button>
         </div>
     </header>
 
     <main>
-        <div class="sections-container">
-            <!-- 6th Grade Section (2026-27) -->
-            <div class="bee-section bee-section-current" data-section="6th">
-                <div class="section-header">
-                    <h2>6th Grade · 2026&#8209;27 Classroom Bee</h2>
-                    <div class="header-actions">
-                        <button class="master-reveal-btn" data-level="6th" aria-label="Reveal all 6th grade words">Reveal All</button>
-                        <button class="toggle-btn" aria-label="Expand 6th grade section">▼</button>
-                    </div>
+        <!-- Overall progress -->
+        <section class="summary" aria-labelledby="summary-title">
+            <div class="summary-top">
+                <div>
+                    <h2 id="summary-title" class="summary-title"><span id="done-count">0</span> of <span id="total-count">200</span> done</h2>
+                    <p class="summary-sub" id="summary-sub">Spell a word correctly to mark it done.</p>
                 </div>
-                <div class="section-content collapsed">
-                    <div id="word-list-6th" class="word-list">
-                        <!-- 200 words in three lists will be dynamically inserted here -->
+                <button id="start-practice" class="btn-primary">Practice</button>
+            </div>
+            <div class="progress-bar" role="img" id="overall-bar" aria-label="Progress">
+                <span class="progress-done"></span><span class="progress-review"></span>
+            </div>
+            <div class="legend">
+                <span><i class="dot dot-done"></i>Done <b id="legend-done">0</b></span>
+                <span><i class="dot dot-review"></i>Review <b id="legend-review">0</b></span>
+                <span><i class="dot dot-todo"></i>Not started <b id="legend-todo">0</b></span>
+            </div>
+        </section>
+
+        <!-- Filters and view options -->
+        <div class="toolbar" role="toolbar" aria-label="Filter words">
+            <div class="chips" id="filter-chips">
+                <button class="chip" data-filter="all" aria-pressed="true">All <span class="chip-count" data-count="all"></span></button>
+                <button class="chip" data-filter="todo" aria-pressed="false">Not done <span class="chip-count" data-count="todo"></span></button>
+                <button class="chip chip-review" data-filter="review" aria-pressed="false">⚑ Review <span class="chip-count" data-count="review"></span></button>
+                <button class="chip chip-done" data-filter="done" aria-pressed="false">✓ Done <span class="chip-count" data-count="done"></span></button>
+            </div>
+            <div class="toolbar-actions">
+                <button id="toggle-show-all" class="btn-ghost" aria-pressed="false">Show all words</button>
+                <button id="toggle-expand-all" class="btn-ghost">Expand all</button>
+            </div>
+        </div>
+
+        <!-- Lists are rendered here -->
+        <div id="lists" class="lists"></div>
+
+        <footer class="page-footer">
+            <p>Progress is saved in this browser on this device. Save a backup to move it to another device or keep it safe.</p>
+            <div class="footer-actions">
+                <button id="backup-save" class="btn-ghost">Save backup</button>
+                <label class="btn-ghost file-btn">Load backup<input type="file" id="backup-load" accept="application/json,.json" hidden></label>
+                <button id="progress-reset" class="btn-ghost btn-danger">Reset progress</button>
+            </div>
+            <p class="footer-note">Last year's 1B, 2B and 3B lists are in the <a href="archive.html">archive</a>.</p>
+        </footer>
+    </main>
+
+    <!-- Practice overlay -->
+    <div id="practice" class="practice" role="dialog" aria-modal="true" aria-labelledby="practice-title" hidden>
+        <div class="practice-panel">
+            <div class="practice-head">
+                <h2 id="practice-title">Practice</h2>
+                <span class="practice-step" id="practice-step"></span>
+                <button class="icon-btn" id="practice-close" aria-label="Close practice">✕</button>
+            </div>
+
+            <!-- Step 1: choose words -->
+            <div class="practice-view" id="practice-setup">
+                <fieldset class="option-group">
+                    <legend>Which words?</legend>
+                    <div class="segmented" id="setup-pool">
+                        <button data-pool="todo" aria-pressed="true">Not done <span data-pool-count="todo"></span></button>
+                        <button data-pool="review" aria-pressed="false">⚑ Review <span data-pool-count="review"></span></button>
+                        <button data-pool="all" aria-pressed="false">All <span data-pool-count="all"></span></button>
+                    </div>
+                </fieldset>
+                <fieldset class="option-group">
+                    <legend>From which lists?</legend>
+                    <div class="segmented" id="setup-lists"></div>
+                </fieldset>
+                <fieldset class="option-group">
+                    <legend>How many?</legend>
+                    <div class="segmented" id="setup-size">
+                        <button data-size="10" aria-pressed="false">10</button>
+                        <button data-size="20" aria-pressed="true">20</button>
+                        <button data-size="0" aria-pressed="false">All</button>
+                    </div>
+                </fieldset>
+                <p class="setup-summary" id="setup-summary"></p>
+                <button class="btn-primary btn-wide" id="setup-start">Start</button>
+                <p class="hint">Words come in random order. Type the spelling, or spell it out loud and tap “Show answer”.</p>
+            </div>
+
+            <!-- Step 2: one word at a time -->
+            <div class="practice-view" id="practice-question" hidden>
+                <div class="listen-row">
+                    <button class="btn-listen" id="q-play" aria-label="Play word">🔊 Play</button>
+                    <button class="btn-ghost" id="q-slow" aria-label="Play word slowly">🐢 Slow</button>
+                </div>
+                <div class="q-mask" id="q-mask" aria-hidden="true"></div>
+                <p class="q-meta" id="q-meta"></p>
+
+                <form id="q-form" autocomplete="off">
+                    <label for="q-input" class="visually-hidden">Type the spelling</label>
+                    <input id="q-input" class="q-input" type="text" inputmode="text" autocomplete="off"
+                           autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type the spelling">
+                    <div class="q-actions">
+                        <button type="submit" class="btn-primary" id="q-check">Check</button>
+                        <button type="button" class="btn-ghost" id="q-show">Show answer</button>
+                        <button type="button" class="btn-ghost" id="q-skip">Skip</button>
+                    </div>
+                </form>
+
+                <div class="q-result" id="q-result" hidden>
+                    <p class="q-verdict" id="q-verdict"></p>
+                    <p class="q-answer" id="q-answer"></p>
+                    <p class="q-alt" id="q-alt"></p>
+                    <p class="q-typed" id="q-typed"></p>
+                    <div class="q-actions" id="q-self" hidden>
+                        <button class="btn-done" id="q-got">✓ Got it</button>
+                        <button class="btn-review" id="q-missed">⚑ Missed it</button>
+                    </div>
+                    <div class="q-actions" id="q-next-row" hidden>
+                        <button class="btn-primary" id="q-next">Next</button>
+                        <button class="btn-ghost" id="q-override" hidden>I was right (typo)</button>
                     </div>
                 </div>
             </div>
 
-            <!-- 1B Section -->
-            <div class="bee-section" data-section="1B">
-                <div class="section-header">
-                    <h2>1B - School Spelling Bee</h2>
-                    <div class="header-actions">
-                        <button class="master-reveal-btn" data-level="1B" aria-label="Reveal all 1B words">Reveal All</button>
-                        <button class="toggle-btn" aria-label="Expand 1B section">▼</button>
-                    </div>
-                </div>
-                <div class="section-content collapsed">
-                    <div id="word-list-1B" class="word-list">
-                        <!-- 140 words will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2B Section -->
-            <div class="bee-section" data-section="2B">
-                <div class="section-header">
-                    <h2>2B - School Spelling Bee</h2>
-                    <div class="header-actions">
-                        <button class="master-reveal-btn" data-level="2B" aria-label="Reveal all 2B words">Reveal All</button>
-                        <button class="toggle-btn" aria-label="Expand 2B section">▼</button>
-                    </div>
-                </div>
-                <div class="section-content collapsed">
-                    <div id="word-list-2B" class="word-list">
-                        <!-- 152 words will be dynamically inserted here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3B Section -->
-            <div class="bee-section" data-section="3B">
-                <div class="section-header">
-                    <h2>3B - School Spelling Bee</h2>
-                    <div class="header-actions">
-                        <button class="master-reveal-btn" data-level="3B" aria-label="Reveal all 3B words">Reveal All</button>
-                        <button class="toggle-btn" aria-label="Expand 3B section">▼</button>
-                    </div>
-                </div>
-                <div class="section-content collapsed">
-                    <div id="word-list-3B" class="word-list">
-                        <!-- 156 words (11 newly added with highlight) will be dynamically inserted here -->
-                    </div>
+            <!-- Step 3: summary -->
+            <div class="practice-view" id="practice-summary" hidden>
+                <p class="summary-big" id="s-score"></p>
+                <p class="summary-sub" id="s-detail"></p>
+                <ul class="missed-list" id="s-missed"></ul>
+                <div class="q-actions">
+                    <button class="btn-primary" id="s-again">Practice missed words</button>
+                    <button class="btn-ghost" id="s-done">Done</button>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/shared.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
