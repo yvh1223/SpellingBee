@@ -10,7 +10,7 @@ A minimalist, pronunciation-driven spelling practice website with three difficul
 
 - **6th Grade (2026-27)**: 200 words from the Classroom Spelling Bee Study List, in three lists (50 / 50 / 100)
   - Alternate spellings (British or also-accepted) appear under the word when revealed
-  - Pronounced by the browser's built-in voice until MP3s are generated with `generate_all_audio.py`
+  - 200 MP3 pronunciations in `audio/6th` (same OpenAI TTS voice as the other levels)
 - **448 pronunciation-driven spelling words** across three levels (2025-26)
   - **1B (Basic)**: 145 foundational words
   - **2B (Intermediate)**: 158 challenging words

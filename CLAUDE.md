@@ -46,6 +46,7 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
     /1B                         # 140 MP3 files for 1B words
     /2B                         # 152 MP3 files for 2B words
     /3B                         # 156 MP3 files for 3B words
+    /6th                        # 200 MP3 files for 6th grade words (2026-27)
   /data                         # JSON word data
     words_1B.json               # 140 words with IDs
     words_2B.json               # 152 words with IDs
@@ -77,6 +78,7 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
 ✅ **Fully Implemented**:
 - Website with pronunciation-driven interface
 - All 448 audio files generated (1B: 140, 2B: 152, 3B: 156)
+- 6th grade (2026-27): 200 words in three lists, all 200 audio files generated
 - Progressive reveal/hide functionality per word
 - Master "Reveal All/Hide All" toggle per section
 - Mobile-responsive design with warm, eye-friendly aesthetics
