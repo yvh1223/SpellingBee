@@ -5,7 +5,7 @@
 - DD: Desi Deadpool
 
 ## Project Overview
-Building a pronunciation-driven spelling practice website for Vihaan's School Spelling Bee. The focus is on simplicity, elegance, and a calm learning experience. The current focus is the **6th grade 2026-27** list on `index.html`; last year's 1B/2B/3B lists live on `archive.html`.
+Building a pronunciation-driven spelling practice website for Vihaan's School Spelling Bee. The focus is on simplicity, elegance, and a calm learning experience. `index.html` has two 2026-27 word sets as tabs: **School Bee** (Scripps School Spelling Bee Study List, One/Two/Three Bee, 450 words, default) and **6th Grade Classroom** (200 words). Last year's 1B/2B/3B lists live on `archive.html`.
 
 ## Key Design Principles
 1. **Pronunciation First**: Each word has audio pronunciation that must be played
@@ -33,6 +33,10 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
   - List 1 = page 1 (50), List 2 = page 2 (50), List 3 = pages 3-4 (100); each word has a `group` field
   - Variant spellings stored as `alt` + `altNote` (materialize/materialise, odorant/odourant, brazier/brasier, glycerin/glycerine, kerosene/kerosine)
   - The JSON is the source of truth (no .txt file). `"audioFiles": false` makes the site use the browser's speechSynthesis; `generate_all_audio.py` writes `audio/6th/*.mp3` and flips it to `true` once all files exist
+- **School Bee (2026-27)**: `data/words_school_2627.json` - 450 words from "26-27 School Spelling Bee Study List.pdf" (scanned PDF on Google Drive; words taken from its OCR text)
+  - One Bee 150 (all new), Two Bee 150 (100 new + the 50 of 6th grade List 1), Three Bee 150 (= 6th grade Lists 2 and 3)
+  - Every 6th grade classroom word is in this list; the PDF text matched our transcription except "sharpei", kept as "shar-pei" (hyphen visible on the scan)
+  - Audio in `audio/school_2627/` (450 MP3s; the 200 shared words copied from `audio/6th`)
 - **3B New Words**: 11 words highlighted in yellow for focused practice
 
 ## Project Structure
@@ -52,12 +56,14 @@ Building a pronunciation-driven spelling practice website for Vihaan's School Sp
     /2B                         # 152 MP3 files for 2B words
     /3B                         # 156 MP3 files for 3B words
     /6th                        # 200 MP3 files for 6th grade words (2026-27)
+    /school_2627                # 450 MP3 files for the 2026-27 School Bee list
   /data                         # JSON word data
     words_1B.json               # 140 words with IDs
     words_2B.json               # 152 words with IDs
     words_3B.json               # 156 words with IDs
     words_3B_new.json           # 11 newly added 3B words for highlighting
     words_6th.json              # 200 6th grade words (2026-27) with lists and alternate spellings
+    words_school_2627.json      # 450 School Bee words (One/Two/Three Bee)
   generate_all_audio.py         # Multi-level audio generation script
   generate_audio.py             # [ARCHIVED] Old single-level script
   words.json                    # [ARCHIVED] Old single-level data
@@ -302,11 +308,16 @@ if (beeLevel === '3B' && newWords3B.includes(wordObj.word.toLowerCase())) {
 **Challenge**: Track done / needs-review words with no backend (GitHub Pages).
 
 **Solution**:
-- `localStorage['spellingbee-6th-progress-v1'] = {version: 1, words: {"<word lowercase>": {s: 'done'|'review', m: missCount, t: timestamp}}}`
-- Keyed by the word text, not the id, so reordering the JSON doesn't scramble progress
-- Collapsed lists and the active filter are also remembered (`spellingbee-6th-collapsed-v1`, `spellingbee-6th-filter-v1`)
+- `localStorage['spellingbee-progress-v1'] = {version: 1, words: {"<word lowercase>": {s: 'done'|'review', m: missCount, t: timestamp}}}` (migrated from the older `spellingbee-6th-progress-v1` on first load)
+- Keyed by the word text, not the id, so progress is shared between sets (a word done in School Bee is done in 6th Grade too) and reordering the JSON doesn't scramble it
+- Sets are configured in the `SETS` array at the top of `js/app.js`; the active tab is remembered and linkable (`#school`, `#6th`)
+- Collapsed lists per set (`spellingbee-<set>-collapsed-v1`), active filter (`spellingbee-filter-v1`), active set (`spellingbee-active-set-v1`)
 - Save/Load backup downloads/uploads the same JSON. Needed because localStorage is per device and Safari can clear it for sites not visited for a while
 - All storage access is wrapped in try/catch (private browsing can throw)
+
+**Cache busting**: CSS/JS links carry `?v=YYYYMMDD`. Bump it whenever those files change, or browsers can mix a cached old script with new HTML (this caused "Error loading words" once).
+
+**File names**: `sanitizeFileName` (JS) and `sanitize_filename` (Python) both strip accents with NFD normalization first (piñata → pinata, señor → senor). Before this, ñ was dropped in JS but kept in Python, so those words had no audio.
 
 **Answer checking** (practice mode): case-insensitive, extra spaces ignored, accents optional (eclair = éclair), `alt` spelling accepted; hyphens and spaces between words still count.
 

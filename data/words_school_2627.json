@@ -1,0 +1,2288 @@
+{
+  "title": "2026-27 School Spelling Bee Study List",
+  "audioFiles": true,
+  "groups": [
+    {
+      "id": 1,
+      "name": "One Bee",
+      "source": "Pages 1-2",
+      "count": 150
+    },
+    {
+      "id": 2,
+      "name": "Two Bee",
+      "source": "Pages 3-4",
+      "count": 150
+    },
+    {
+      "id": 3,
+      "name": "Three Bee",
+      "source": "Pages 5-6",
+      "count": 150
+    }
+  ],
+  "words": [
+    {
+      "id": 1,
+      "word": "ran",
+      "group": 1
+    },
+    {
+      "id": 2,
+      "word": "wind",
+      "group": 1
+    },
+    {
+      "id": 3,
+      "word": "leg",
+      "group": 1
+    },
+    {
+      "id": 4,
+      "word": "dirt",
+      "group": 1
+    },
+    {
+      "id": 5,
+      "word": "rod",
+      "group": 1
+    },
+    {
+      "id": 6,
+      "word": "good",
+      "group": 1
+    },
+    {
+      "id": 7,
+      "word": "most",
+      "group": 1
+    },
+    {
+      "id": 8,
+      "word": "hurt",
+      "group": 1
+    },
+    {
+      "id": 9,
+      "word": "shy",
+      "group": 1
+    },
+    {
+      "id": 10,
+      "word": "bunny",
+      "group": 1
+    },
+    {
+      "id": 11,
+      "word": "down",
+      "group": 1
+    },
+    {
+      "id": 12,
+      "word": "steps",
+      "group": 1
+    },
+    {
+      "id": 13,
+      "word": "drink",
+      "group": 1
+    },
+    {
+      "id": 14,
+      "word": "silly",
+      "group": 1
+    },
+    {
+      "id": 15,
+      "word": "sick",
+      "group": 1
+    },
+    {
+      "id": 16,
+      "word": "path",
+      "group": 1
+    },
+    {
+      "id": 17,
+      "word": "mist",
+      "group": 1
+    },
+    {
+      "id": 18,
+      "word": "stars",
+      "group": 1
+    },
+    {
+      "id": 19,
+      "word": "truck",
+      "group": 1
+    },
+    {
+      "id": 20,
+      "word": "fire",
+      "group": 1
+    },
+    {
+      "id": 21,
+      "word": "still",
+      "group": 1
+    },
+    {
+      "id": 22,
+      "word": "hello",
+      "group": 1
+    },
+    {
+      "id": 23,
+      "word": "bush",
+      "group": 1
+    },
+    {
+      "id": 24,
+      "word": "late",
+      "group": 1
+    },
+    {
+      "id": 25,
+      "word": "pump",
+      "group": 1
+    },
+    {
+      "id": 26,
+      "word": "shell",
+      "group": 1
+    },
+    {
+      "id": 27,
+      "word": "yarn",
+      "group": 1
+    },
+    {
+      "id": 28,
+      "word": "wings",
+      "group": 1
+    },
+    {
+      "id": 29,
+      "word": "sharp",
+      "group": 1
+    },
+    {
+      "id": 30,
+      "word": "easy",
+      "group": 1
+    },
+    {
+      "id": 31,
+      "word": "body",
+      "group": 1
+    },
+    {
+      "id": 32,
+      "word": "house",
+      "group": 1
+    },
+    {
+      "id": 33,
+      "word": "rich",
+      "group": 1
+    },
+    {
+      "id": 34,
+      "word": "shift",
+      "group": 1
+    },
+    {
+      "id": 35,
+      "word": "heart",
+      "group": 1
+    },
+    {
+      "id": 36,
+      "word": "tusk",
+      "group": 1
+    },
+    {
+      "id": 37,
+      "word": "shoot",
+      "group": 1
+    },
+    {
+      "id": 38,
+      "word": "seal",
+      "group": 1
+    },
+    {
+      "id": 39,
+      "word": "even",
+      "group": 1
+    },
+    {
+      "id": 40,
+      "word": "dive",
+      "group": 1
+    },
+    {
+      "id": 41,
+      "word": "claws",
+      "group": 1
+    },
+    {
+      "id": 42,
+      "word": "crack",
+      "group": 1
+    },
+    {
+      "id": 43,
+      "word": "come",
+      "group": 1
+    },
+    {
+      "id": 44,
+      "word": "fine",
+      "group": 1
+    },
+    {
+      "id": 45,
+      "word": "winter",
+      "group": 1
+    },
+    {
+      "id": 46,
+      "word": "apple",
+      "group": 1
+    },
+    {
+      "id": 47,
+      "word": "sound",
+      "group": 1
+    },
+    {
+      "id": 48,
+      "word": "mossy",
+      "group": 1
+    },
+    {
+      "id": 49,
+      "word": "yellow",
+      "group": 1
+    },
+    {
+      "id": 50,
+      "word": "shine",
+      "group": 1
+    },
+    {
+      "id": 51,
+      "word": "chips",
+      "group": 1
+    },
+    {
+      "id": 52,
+      "word": "beans",
+      "group": 1
+    },
+    {
+      "id": 53,
+      "word": "mouth",
+      "group": 1
+    },
+    {
+      "id": 54,
+      "word": "spray",
+      "group": 1
+    },
+    {
+      "id": 55,
+      "word": "year",
+      "group": 1
+    },
+    {
+      "id": 56,
+      "word": "truth",
+      "group": 1
+    },
+    {
+      "id": 57,
+      "word": "paper",
+      "group": 1
+    },
+    {
+      "id": 58,
+      "word": "rabbit",
+      "group": 1
+    },
+    {
+      "id": 59,
+      "word": "feed",
+      "group": 1
+    },
+    {
+      "id": 60,
+      "word": "tallest",
+      "group": 1
+    },
+    {
+      "id": 61,
+      "word": "inside",
+      "group": 1
+    },
+    {
+      "id": 62,
+      "word": "frozen",
+      "group": 1
+    },
+    {
+      "id": 63,
+      "word": "speak",
+      "group": 1
+    },
+    {
+      "id": 64,
+      "word": "cliffs",
+      "group": 1
+    },
+    {
+      "id": 65,
+      "word": "whale",
+      "group": 1
+    },
+    {
+      "id": 66,
+      "word": "market",
+      "group": 1
+    },
+    {
+      "id": 67,
+      "word": "flock",
+      "group": 1
+    },
+    {
+      "id": 68,
+      "word": "crunch",
+      "group": 1
+    },
+    {
+      "id": 69,
+      "word": "lizard",
+      "group": 1
+    },
+    {
+      "id": 70,
+      "word": "beware",
+      "group": 1
+    },
+    {
+      "id": 71,
+      "word": "sparkle",
+      "group": 1
+    },
+    {
+      "id": 72,
+      "word": "sweater",
+      "group": 1
+    },
+    {
+      "id": 73,
+      "word": "nurse",
+      "group": 1
+    },
+    {
+      "id": 74,
+      "word": "wrong",
+      "group": 1
+    },
+    {
+      "id": 75,
+      "word": "hopped",
+      "group": 1
+    },
+    {
+      "id": 76,
+      "word": "money",
+      "group": 1
+    },
+    {
+      "id": 77,
+      "word": "cabin",
+      "group": 1
+    },
+    {
+      "id": 78,
+      "word": "darkness",
+      "group": 1
+    },
+    {
+      "id": 79,
+      "word": "always",
+      "group": 1
+    },
+    {
+      "id": 80,
+      "word": "sprout",
+      "group": 1
+    },
+    {
+      "id": 81,
+      "word": "carve",
+      "group": 1
+    },
+    {
+      "id": 82,
+      "word": "shadows",
+      "group": 1
+    },
+    {
+      "id": 83,
+      "word": "morning",
+      "group": 1
+    },
+    {
+      "id": 84,
+      "word": "alive",
+      "group": 1
+    },
+    {
+      "id": 85,
+      "word": "earth",
+      "group": 1
+    },
+    {
+      "id": 86,
+      "word": "friend",
+      "group": 1
+    },
+    {
+      "id": 87,
+      "word": "lovely",
+      "group": 1
+    },
+    {
+      "id": 88,
+      "word": "return",
+      "group": 1
+    },
+    {
+      "id": 89,
+      "word": "half",
+      "group": 1
+    },
+    {
+      "id": 90,
+      "word": "swift",
+      "group": 1
+    },
+    {
+      "id": 91,
+      "word": "grandfather",
+      "group": 1
+    },
+    {
+      "id": 92,
+      "word": "footprints",
+      "group": 1
+    },
+    {
+      "id": 93,
+      "word": "fear",
+      "group": 1
+    },
+    {
+      "id": 94,
+      "word": "thirsty",
+      "group": 1
+    },
+    {
+      "id": 95,
+      "word": "peer",
+      "group": 1
+    },
+    {
+      "id": 96,
+      "word": "gentle",
+      "group": 1
+    },
+    {
+      "id": 97,
+      "word": "riddle",
+      "group": 1
+    },
+    {
+      "id": 98,
+      "word": "voice",
+      "group": 1
+    },
+    {
+      "id": 99,
+      "word": "peach",
+      "group": 1
+    },
+    {
+      "id": 100,
+      "word": "pancakes",
+      "group": 1
+    },
+    {
+      "id": 101,
+      "word": "illness",
+      "group": 1
+    },
+    {
+      "id": 102,
+      "word": "lead",
+      "group": 1
+    },
+    {
+      "id": 103,
+      "word": "groan",
+      "group": 1
+    },
+    {
+      "id": 104,
+      "word": "sloth",
+      "group": 1
+    },
+    {
+      "id": 105,
+      "word": "knit",
+      "group": 1
+    },
+    {
+      "id": 106,
+      "word": "cloak",
+      "group": 1
+    },
+    {
+      "id": 107,
+      "word": "parade",
+      "group": 1
+    },
+    {
+      "id": 108,
+      "word": "whistle",
+      "group": 1
+    },
+    {
+      "id": 109,
+      "word": "total",
+      "group": 1
+    },
+    {
+      "id": 110,
+      "word": "indoors",
+      "group": 1
+    },
+    {
+      "id": 111,
+      "word": "trouble",
+      "group": 1
+    },
+    {
+      "id": 112,
+      "word": "relax",
+      "group": 1
+    },
+    {
+      "id": 113,
+      "word": "finish",
+      "group": 1
+    },
+    {
+      "id": 114,
+      "word": "holiday",
+      "group": 1
+    },
+    {
+      "id": 115,
+      "word": "safety",
+      "group": 1
+    },
+    {
+      "id": 116,
+      "word": "stout",
+      "group": 1
+    },
+    {
+      "id": 117,
+      "word": "spiders",
+      "group": 1
+    },
+    {
+      "id": 118,
+      "word": "entire",
+      "group": 1
+    },
+    {
+      "id": 119,
+      "word": "library",
+      "group": 1
+    },
+    {
+      "id": 120,
+      "word": "guide",
+      "group": 1
+    },
+    {
+      "id": 121,
+      "word": "hospital",
+      "group": 1
+    },
+    {
+      "id": 122,
+      "word": "mustard",
+      "group": 1
+    },
+    {
+      "id": 123,
+      "word": "company",
+      "group": 1
+    },
+    {
+      "id": 124,
+      "word": "ginger",
+      "group": 1
+    },
+    {
+      "id": 125,
+      "word": "narrow",
+      "group": 1
+    },
+    {
+      "id": 126,
+      "word": "medium",
+      "group": 1
+    },
+    {
+      "id": 127,
+      "word": "pennies",
+      "group": 1
+    },
+    {
+      "id": 128,
+      "word": "hiking",
+      "group": 1
+    },
+    {
+      "id": 129,
+      "word": "foolish",
+      "group": 1
+    },
+    {
+      "id": 130,
+      "word": "afraid",
+      "group": 1
+    },
+    {
+      "id": 131,
+      "word": "remember",
+      "group": 1
+    },
+    {
+      "id": 132,
+      "word": "result",
+      "group": 1
+    },
+    {
+      "id": 133,
+      "word": "charming",
+      "group": 1
+    },
+    {
+      "id": 134,
+      "word": "source",
+      "group": 1
+    },
+    {
+      "id": 135,
+      "word": "pearls",
+      "group": 1
+    },
+    {
+      "id": 136,
+      "word": "tangy",
+      "group": 1
+    },
+    {
+      "id": 137,
+      "word": "beasts",
+      "group": 1
+    },
+    {
+      "id": 138,
+      "word": "shivering",
+      "group": 1
+    },
+    {
+      "id": 139,
+      "word": "barge",
+      "group": 1
+    },
+    {
+      "id": 140,
+      "word": "grumpily",
+      "group": 1
+    },
+    {
+      "id": 141,
+      "word": "smoothly",
+      "group": 1
+    },
+    {
+      "id": 142,
+      "word": "cottage",
+      "group": 1
+    },
+    {
+      "id": 143,
+      "word": "humble",
+      "group": 1
+    },
+    {
+      "id": 144,
+      "word": "seventy",
+      "group": 1
+    },
+    {
+      "id": 145,
+      "word": "dangle",
+      "group": 1
+    },
+    {
+      "id": 146,
+      "word": "distance",
+      "group": 1
+    },
+    {
+      "id": 147,
+      "word": "breeze",
+      "group": 1
+    },
+    {
+      "id": 148,
+      "word": "soared",
+      "group": 1
+    },
+    {
+      "id": 149,
+      "word": "frazzled",
+      "group": 1
+    },
+    {
+      "id": 150,
+      "word": "bamboo",
+      "group": 1
+    },
+    {
+      "id": 151,
+      "word": "buttons",
+      "group": 2
+    },
+    {
+      "id": 152,
+      "word": "cuddle",
+      "group": 2
+    },
+    {
+      "id": 153,
+      "word": "puffy",
+      "group": 2
+    },
+    {
+      "id": 154,
+      "word": "tiptoed",
+      "group": 2
+    },
+    {
+      "id": 155,
+      "word": "clever",
+      "group": 2
+    },
+    {
+      "id": 156,
+      "word": "basement",
+      "group": 2
+    },
+    {
+      "id": 157,
+      "word": "burlap",
+      "group": 2
+    },
+    {
+      "id": 158,
+      "word": "wetlands",
+      "group": 2
+    },
+    {
+      "id": 159,
+      "word": "invite",
+      "group": 2
+    },
+    {
+      "id": 160,
+      "word": "butterflies",
+      "group": 2
+    },
+    {
+      "id": 161,
+      "word": "kelp",
+      "group": 2
+    },
+    {
+      "id": 162,
+      "word": "property",
+      "group": 2
+    },
+    {
+      "id": 163,
+      "word": "carefully",
+      "group": 2
+    },
+    {
+      "id": 164,
+      "word": "sniffling",
+      "group": 2
+    },
+    {
+      "id": 165,
+      "word": "beneath",
+      "group": 2
+    },
+    {
+      "id": 166,
+      "word": "tractor",
+      "group": 2
+    },
+    {
+      "id": 167,
+      "word": "permit",
+      "group": 2
+    },
+    {
+      "id": 168,
+      "word": "awning",
+      "group": 2
+    },
+    {
+      "id": 169,
+      "word": "fickle",
+      "group": 2
+    },
+    {
+      "id": 170,
+      "word": "relief",
+      "group": 2
+    },
+    {
+      "id": 171,
+      "word": "lunar",
+      "group": 2
+    },
+    {
+      "id": 172,
+      "word": "boycotting",
+      "group": 2
+    },
+    {
+      "id": 173,
+      "word": "molten",
+      "group": 2
+    },
+    {
+      "id": 174,
+      "word": "elite",
+      "group": 2
+    },
+    {
+      "id": 175,
+      "word": "woven",
+      "group": 2
+    },
+    {
+      "id": 176,
+      "word": "proclaim",
+      "group": 2
+    },
+    {
+      "id": 177,
+      "word": "thimble",
+      "group": 2
+    },
+    {
+      "id": 178,
+      "word": "custody",
+      "group": 2
+    },
+    {
+      "id": 179,
+      "word": "granola",
+      "group": 2
+    },
+    {
+      "id": 180,
+      "word": "warrior",
+      "group": 2
+    },
+    {
+      "id": 181,
+      "word": "rigid",
+      "group": 2
+    },
+    {
+      "id": 182,
+      "word": "fierce",
+      "group": 2
+    },
+    {
+      "id": 183,
+      "word": "laughter",
+      "group": 2
+    },
+    {
+      "id": 184,
+      "word": "salary",
+      "group": 2
+    },
+    {
+      "id": 185,
+      "word": "disappear",
+      "group": 2
+    },
+    {
+      "id": 186,
+      "word": "hurdler",
+      "group": 2
+    },
+    {
+      "id": 187,
+      "word": "lounge",
+      "group": 2
+    },
+    {
+      "id": 188,
+      "word": "jovial",
+      "group": 2
+    },
+    {
+      "id": 189,
+      "word": "inferior",
+      "group": 2
+    },
+    {
+      "id": 190,
+      "word": "December",
+      "group": 2
+    },
+    {
+      "id": 191,
+      "word": "duration",
+      "group": 2
+    },
+    {
+      "id": 192,
+      "word": "dictionary",
+      "group": 2
+    },
+    {
+      "id": 193,
+      "word": "business",
+      "group": 2
+    },
+    {
+      "id": 194,
+      "word": "reinstate",
+      "group": 2
+    },
+    {
+      "id": 195,
+      "word": "examine",
+      "group": 2
+    },
+    {
+      "id": 196,
+      "word": "versus",
+      "group": 2
+    },
+    {
+      "id": 197,
+      "word": "lullaby",
+      "group": 2
+    },
+    {
+      "id": 198,
+      "word": "opposite",
+      "group": 2
+    },
+    {
+      "id": 199,
+      "word": "tissues",
+      "group": 2
+    },
+    {
+      "id": 200,
+      "word": "marlin",
+      "group": 2
+    },
+    {
+      "id": 201,
+      "word": "Halloween",
+      "group": 2
+    },
+    {
+      "id": 202,
+      "word": "compliment",
+      "group": 2
+    },
+    {
+      "id": 203,
+      "word": "compromise",
+      "group": 2
+    },
+    {
+      "id": 204,
+      "word": "incident",
+      "group": 2
+    },
+    {
+      "id": 205,
+      "word": "Japanese",
+      "group": 2
+    },
+    {
+      "id": 206,
+      "word": "investment",
+      "group": 2
+    },
+    {
+      "id": 207,
+      "word": "bifocals",
+      "group": 2
+    },
+    {
+      "id": 208,
+      "word": "geologist",
+      "group": 2
+    },
+    {
+      "id": 209,
+      "word": "cutlery",
+      "group": 2
+    },
+    {
+      "id": 210,
+      "word": "chisel",
+      "group": 2
+    },
+    {
+      "id": 211,
+      "word": "fundraiser",
+      "group": 2
+    },
+    {
+      "id": 212,
+      "word": "bellowed",
+      "group": 2
+    },
+    {
+      "id": 213,
+      "word": "organism",
+      "group": 2
+    },
+    {
+      "id": 214,
+      "word": "quail",
+      "group": 2
+    },
+    {
+      "id": 215,
+      "word": "atmosphere",
+      "group": 2
+    },
+    {
+      "id": 216,
+      "word": "disappointment",
+      "group": 2
+    },
+    {
+      "id": 217,
+      "word": "truant",
+      "group": 2
+    },
+    {
+      "id": 218,
+      "word": "pamphlet",
+      "group": 2
+    },
+    {
+      "id": 219,
+      "word": "helium",
+      "group": 2
+    },
+    {
+      "id": 220,
+      "word": "suggested",
+      "group": 2
+    },
+    {
+      "id": 221,
+      "word": "chimpanzees",
+      "group": 2
+    },
+    {
+      "id": 222,
+      "word": "desperate",
+      "group": 2
+    },
+    {
+      "id": 223,
+      "word": "annoyance",
+      "group": 2
+    },
+    {
+      "id": 224,
+      "word": "interruption",
+      "group": 2
+    },
+    {
+      "id": 225,
+      "word": "concentrate",
+      "group": 2
+    },
+    {
+      "id": 226,
+      "word": "piñata",
+      "group": 2
+    },
+    {
+      "id": 227,
+      "word": "territory",
+      "group": 2
+    },
+    {
+      "id": 228,
+      "word": "stragglers",
+      "group": 2
+    },
+    {
+      "id": 229,
+      "word": "albino",
+      "group": 2
+    },
+    {
+      "id": 230,
+      "word": "ridiculous",
+      "group": 2
+    },
+    {
+      "id": 231,
+      "word": "monorail",
+      "group": 2
+    },
+    {
+      "id": 232,
+      "word": "exploratory",
+      "group": 2
+    },
+    {
+      "id": 233,
+      "word": "indigo",
+      "group": 2
+    },
+    {
+      "id": 234,
+      "word": "bratwurst",
+      "group": 2
+    },
+    {
+      "id": 235,
+      "word": "alphabetical",
+      "group": 2
+    },
+    {
+      "id": 236,
+      "word": "integrity",
+      "group": 2
+    },
+    {
+      "id": 237,
+      "word": "Oregon",
+      "group": 2
+    },
+    {
+      "id": 238,
+      "word": "rebuttal",
+      "group": 2
+    },
+    {
+      "id": 239,
+      "word": "prejudice",
+      "group": 2
+    },
+    {
+      "id": 240,
+      "word": "solidarity",
+      "group": 2
+    },
+    {
+      "id": 241,
+      "word": "calico",
+      "group": 2
+    },
+    {
+      "id": 242,
+      "word": "sputnik",
+      "group": 2
+    },
+    {
+      "id": 243,
+      "word": "cartridge",
+      "group": 2
+    },
+    {
+      "id": 244,
+      "word": "segregation",
+      "group": 2
+    },
+    {
+      "id": 245,
+      "word": "tortillas",
+      "group": 2
+    },
+    {
+      "id": 246,
+      "word": "civilian",
+      "group": 2
+    },
+    {
+      "id": 247,
+      "word": "fertilizer",
+      "alt": "fertiliser",
+      "altNote": "British spelling",
+      "group": 2
+    },
+    {
+      "id": 248,
+      "word": "apprentice",
+      "group": 2
+    },
+    {
+      "id": 249,
+      "word": "synthetic",
+      "group": 2
+    },
+    {
+      "id": 250,
+      "word": "Caesar",
+      "group": 2
+    },
+    {
+      "id": 251,
+      "word": "sorceress",
+      "group": 2
+    },
+    {
+      "id": 252,
+      "word": "suspension",
+      "group": 2
+    },
+    {
+      "id": 253,
+      "word": "convertible",
+      "group": 2
+    },
+    {
+      "id": 254,
+      "word": "collateral",
+      "group": 2
+    },
+    {
+      "id": 255,
+      "word": "perimeter",
+      "group": 2
+    },
+    {
+      "id": 256,
+      "word": "magnesium",
+      "group": 2
+    },
+    {
+      "id": 257,
+      "word": "hypothermia",
+      "group": 2
+    },
+    {
+      "id": 258,
+      "word": "cosmodrome",
+      "group": 2
+    },
+    {
+      "id": 259,
+      "word": "insurrection",
+      "group": 2
+    },
+    {
+      "id": 260,
+      "word": "persnickety",
+      "group": 2
+    },
+    {
+      "id": 261,
+      "word": "predecessor",
+      "group": 2
+    },
+    {
+      "id": 262,
+      "word": "duende",
+      "group": 2
+    },
+    {
+      "id": 263,
+      "word": "carrion",
+      "group": 2
+    },
+    {
+      "id": 264,
+      "word": "arnica",
+      "group": 2
+    },
+    {
+      "id": 265,
+      "word": "iridium",
+      "group": 2
+    },
+    {
+      "id": 266,
+      "word": "staccato",
+      "group": 2
+    },
+    {
+      "id": 267,
+      "word": "dachshund",
+      "group": 2
+    },
+    {
+      "id": 268,
+      "word": "glamorous",
+      "group": 2
+    },
+    {
+      "id": 269,
+      "word": "singularity",
+      "group": 2
+    },
+    {
+      "id": 270,
+      "word": "snarkiness",
+      "group": 2
+    },
+    {
+      "id": 271,
+      "word": "initiation",
+      "group": 2
+    },
+    {
+      "id": 272,
+      "word": "precedent",
+      "group": 2
+    },
+    {
+      "id": 273,
+      "word": "meticulous",
+      "group": 2
+    },
+    {
+      "id": 274,
+      "word": "optometrist",
+      "group": 2
+    },
+    {
+      "id": 275,
+      "word": "arthritis",
+      "group": 2
+    },
+    {
+      "id": 276,
+      "word": "regolith",
+      "group": 2
+    },
+    {
+      "id": 277,
+      "word": "fascism",
+      "group": 2
+    },
+    {
+      "id": 278,
+      "word": "Senegal",
+      "group": 2
+    },
+    {
+      "id": 279,
+      "word": "conscious",
+      "group": 2
+    },
+    {
+      "id": 280,
+      "word": "matrilineal",
+      "group": 2
+    },
+    {
+      "id": 281,
+      "word": "elliptical",
+      "group": 2
+    },
+    {
+      "id": 282,
+      "word": "adrenaline",
+      "group": 2
+    },
+    {
+      "id": 283,
+      "word": "rendezvous",
+      "group": 2
+    },
+    {
+      "id": 284,
+      "word": "Aeolus",
+      "group": 2
+    },
+    {
+      "id": 285,
+      "word": "salamanders",
+      "group": 2
+    },
+    {
+      "id": 286,
+      "word": "fictitious",
+      "group": 2
+    },
+    {
+      "id": 287,
+      "word": "battalion",
+      "group": 2
+    },
+    {
+      "id": 288,
+      "word": "mascara",
+      "group": 2
+    },
+    {
+      "id": 289,
+      "word": "materialize",
+      "alt": "materialise",
+      "altNote": "British spelling",
+      "group": 2
+    },
+    {
+      "id": 290,
+      "word": "haddock",
+      "group": 2
+    },
+    {
+      "id": 291,
+      "word": "megahertz",
+      "group": 2
+    },
+    {
+      "id": 292,
+      "word": "schnauzer",
+      "group": 2
+    },
+    {
+      "id": 293,
+      "word": "pentathletes",
+      "group": 2
+    },
+    {
+      "id": 294,
+      "word": "pheasants",
+      "group": 2
+    },
+    {
+      "id": 295,
+      "word": "reservoir",
+      "group": 2
+    },
+    {
+      "id": 296,
+      "word": "Polaroid",
+      "group": 2
+    },
+    {
+      "id": 297,
+      "word": "piteously",
+      "group": 2
+    },
+    {
+      "id": 298,
+      "word": "glaucoma",
+      "group": 2
+    },
+    {
+      "id": 299,
+      "word": "cemetery",
+      "group": 2
+    },
+    {
+      "id": 300,
+      "word": "romerillo",
+      "group": 2
+    },
+    {
+      "id": 301,
+      "word": "newt",
+      "group": 3
+    },
+    {
+      "id": 302,
+      "word": "lapels",
+      "group": 3
+    },
+    {
+      "id": 303,
+      "word": "mortar",
+      "group": 3
+    },
+    {
+      "id": 304,
+      "word": "imperial",
+      "group": 3
+    },
+    {
+      "id": 305,
+      "word": "mewling",
+      "group": 3
+    },
+    {
+      "id": 306,
+      "word": "authority",
+      "group": 3
+    },
+    {
+      "id": 307,
+      "word": "lemmings",
+      "group": 3
+    },
+    {
+      "id": 308,
+      "word": "inanimate",
+      "group": 3
+    },
+    {
+      "id": 309,
+      "word": "appetizing",
+      "group": 3
+    },
+    {
+      "id": 310,
+      "word": "self-sufficient",
+      "group": 3
+    },
+    {
+      "id": 311,
+      "word": "tenuous",
+      "group": 3
+    },
+    {
+      "id": 312,
+      "word": "procession",
+      "group": 3
+    },
+    {
+      "id": 313,
+      "word": "hemisphere",
+      "group": 3
+    },
+    {
+      "id": 314,
+      "word": "torrential",
+      "group": 3
+    },
+    {
+      "id": 315,
+      "word": "cuisine",
+      "group": 3
+    },
+    {
+      "id": 316,
+      "word": "modish",
+      "group": 3
+    },
+    {
+      "id": 317,
+      "word": "settee",
+      "group": 3
+    },
+    {
+      "id": 318,
+      "word": "thrummed",
+      "group": 3
+    },
+    {
+      "id": 319,
+      "word": "generosity",
+      "group": 3
+    },
+    {
+      "id": 320,
+      "word": "unrelenting",
+      "group": 3
+    },
+    {
+      "id": 321,
+      "word": "persistent",
+      "group": 3
+    },
+    {
+      "id": 322,
+      "word": "generator",
+      "group": 3
+    },
+    {
+      "id": 323,
+      "word": "panoramic",
+      "group": 3
+    },
+    {
+      "id": 324,
+      "word": "decisively",
+      "group": 3
+    },
+    {
+      "id": 325,
+      "word": "frequency",
+      "group": 3
+    },
+    {
+      "id": 326,
+      "word": "sentinels",
+      "group": 3
+    },
+    {
+      "id": 327,
+      "word": "prospective",
+      "group": 3
+    },
+    {
+      "id": 328,
+      "word": "conspicuous",
+      "group": 3
+    },
+    {
+      "id": 329,
+      "word": "saxophone",
+      "group": 3
+    },
+    {
+      "id": 330,
+      "word": "seminal",
+      "group": 3
+    },
+    {
+      "id": 331,
+      "word": "reluctance",
+      "group": 3
+    },
+    {
+      "id": 332,
+      "word": "sauntered",
+      "group": 3
+    },
+    {
+      "id": 333,
+      "word": "influenza",
+      "group": 3
+    },
+    {
+      "id": 334,
+      "word": "unconscious",
+      "group": 3
+    },
+    {
+      "id": 335,
+      "word": "embankment",
+      "group": 3
+    },
+    {
+      "id": 336,
+      "word": "burnished",
+      "group": 3
+    },
+    {
+      "id": 337,
+      "word": "wallowing",
+      "group": 3
+    },
+    {
+      "id": 338,
+      "word": "arsonists",
+      "group": 3
+    },
+    {
+      "id": 339,
+      "word": "dominion",
+      "group": 3
+    },
+    {
+      "id": 340,
+      "word": "Doberman",
+      "group": 3
+    },
+    {
+      "id": 341,
+      "word": "gauntlets",
+      "group": 3
+    },
+    {
+      "id": 342,
+      "word": "auditory",
+      "group": 3
+    },
+    {
+      "id": 343,
+      "word": "blithely",
+      "group": 3
+    },
+    {
+      "id": 344,
+      "word": "subscription",
+      "group": 3
+    },
+    {
+      "id": 345,
+      "word": "preconception",
+      "group": 3
+    },
+    {
+      "id": 346,
+      "word": "perpendicular",
+      "group": 3
+    },
+    {
+      "id": 347,
+      "word": "canter",
+      "group": 3
+    },
+    {
+      "id": 348,
+      "word": "consulate",
+      "group": 3
+    },
+    {
+      "id": 349,
+      "word": "propeller",
+      "group": 3
+    },
+    {
+      "id": 350,
+      "word": "juniper",
+      "group": 3
+    },
+    {
+      "id": 351,
+      "word": "odorant",
+      "alt": "odourant",
+      "altNote": "British spelling",
+      "group": 3
+    },
+    {
+      "id": 352,
+      "word": "crocheted",
+      "group": 3
+    },
+    {
+      "id": 353,
+      "word": "apologetic",
+      "group": 3
+    },
+    {
+      "id": 354,
+      "word": "Delaware",
+      "group": 3
+    },
+    {
+      "id": 355,
+      "word": "undulating",
+      "group": 3
+    },
+    {
+      "id": 356,
+      "word": "brazier",
+      "alt": "brasier",
+      "altNote": "also accepted",
+      "group": 3
+    },
+    {
+      "id": 357,
+      "word": "phantasmal",
+      "group": 3
+    },
+    {
+      "id": 358,
+      "word": "arachnid",
+      "group": 3
+    },
+    {
+      "id": 359,
+      "word": "affinities",
+      "group": 3
+    },
+    {
+      "id": 360,
+      "word": "embodiment",
+      "group": 3
+    },
+    {
+      "id": 361,
+      "word": "porpoises",
+      "group": 3
+    },
+    {
+      "id": 362,
+      "word": "psychological",
+      "group": 3
+    },
+    {
+      "id": 363,
+      "word": "assemblage",
+      "group": 3
+    },
+    {
+      "id": 364,
+      "word": "leprosy",
+      "group": 3
+    },
+    {
+      "id": 365,
+      "word": "eureka",
+      "group": 3
+    },
+    {
+      "id": 366,
+      "word": "annelids",
+      "group": 3
+    },
+    {
+      "id": 367,
+      "word": "palazzo",
+      "group": 3
+    },
+    {
+      "id": 368,
+      "word": "irrelevant",
+      "group": 3
+    },
+    {
+      "id": 369,
+      "word": "diplomatically",
+      "group": 3
+    },
+    {
+      "id": 370,
+      "word": "calibrate",
+      "group": 3
+    },
+    {
+      "id": 371,
+      "word": "credenza",
+      "group": 3
+    },
+    {
+      "id": 372,
+      "word": "phenomenon",
+      "group": 3
+    },
+    {
+      "id": 373,
+      "word": "alleviate",
+      "group": 3
+    },
+    {
+      "id": 374,
+      "word": "legation",
+      "group": 3
+    },
+    {
+      "id": 375,
+      "word": "diffidence",
+      "group": 3
+    },
+    {
+      "id": 376,
+      "word": "butane",
+      "group": 3
+    },
+    {
+      "id": 377,
+      "word": "cataract",
+      "group": 3
+    },
+    {
+      "id": 378,
+      "word": "quiche",
+      "group": 3
+    },
+    {
+      "id": 379,
+      "word": "euphemism",
+      "group": 3
+    },
+    {
+      "id": 380,
+      "word": "acolyte",
+      "group": 3
+    },
+    {
+      "id": 381,
+      "word": "innocuous",
+      "group": 3
+    },
+    {
+      "id": 382,
+      "word": "Tripoli",
+      "group": 3
+    },
+    {
+      "id": 383,
+      "word": "neurological",
+      "group": 3
+    },
+    {
+      "id": 384,
+      "word": "mysticetes",
+      "group": 3
+    },
+    {
+      "id": 385,
+      "word": "finesse",
+      "group": 3
+    },
+    {
+      "id": 386,
+      "word": "curriculum",
+      "group": 3
+    },
+    {
+      "id": 387,
+      "word": "enigmatic",
+      "group": 3
+    },
+    {
+      "id": 388,
+      "word": "hypothesis",
+      "group": 3
+    },
+    {
+      "id": 389,
+      "word": "comprehensible",
+      "group": 3
+    },
+    {
+      "id": 390,
+      "word": "trenchant",
+      "group": 3
+    },
+    {
+      "id": 391,
+      "word": "despondent",
+      "group": 3
+    },
+    {
+      "id": 392,
+      "word": "echolocation",
+      "group": 3
+    },
+    {
+      "id": 393,
+      "word": "conflagration",
+      "group": 3
+    },
+    {
+      "id": 394,
+      "word": "thermotaxis",
+      "group": 3
+    },
+    {
+      "id": 395,
+      "word": "inaugurate",
+      "group": 3
+    },
+    {
+      "id": 396,
+      "word": "bioluminescence",
+      "group": 3
+    },
+    {
+      "id": 397,
+      "word": "chickadee",
+      "group": 3
+    },
+    {
+      "id": 398,
+      "word": "asymmetric",
+      "group": 3
+    },
+    {
+      "id": 399,
+      "word": "shar-pei",
+      "group": 3
+    },
+    {
+      "id": 400,
+      "word": "endothermy",
+      "group": 3
+    },
+    {
+      "id": 401,
+      "word": "éclair",
+      "group": 3
+    },
+    {
+      "id": 402,
+      "word": "irascibility",
+      "group": 3
+    },
+    {
+      "id": 403,
+      "word": "foliage",
+      "group": 3
+    },
+    {
+      "id": 404,
+      "word": "quizzically",
+      "group": 3
+    },
+    {
+      "id": 405,
+      "word": "increments",
+      "group": 3
+    },
+    {
+      "id": 406,
+      "word": "reassurance",
+      "group": 3
+    },
+    {
+      "id": 407,
+      "word": "protectorate",
+      "group": 3
+    },
+    {
+      "id": 408,
+      "word": "pulmonary",
+      "group": 3
+    },
+    {
+      "id": 409,
+      "word": "approximation",
+      "group": 3
+    },
+    {
+      "id": 410,
+      "word": "censers",
+      "group": 3
+    },
+    {
+      "id": 411,
+      "word": "pathologically",
+      "group": 3
+    },
+    {
+      "id": 412,
+      "word": "glycerin",
+      "alt": "glycerine",
+      "altNote": "also accepted",
+      "group": 3
+    },
+    {
+      "id": 413,
+      "word": "alabaster",
+      "group": 3
+    },
+    {
+      "id": 414,
+      "word": "arugula",
+      "group": 3
+    },
+    {
+      "id": 415,
+      "word": "vibrometer",
+      "group": 3
+    },
+    {
+      "id": 416,
+      "word": "mayonnaise",
+      "group": 3
+    },
+    {
+      "id": 417,
+      "word": "sputum",
+      "group": 3
+    },
+    {
+      "id": 418,
+      "word": "cerulean",
+      "group": 3
+    },
+    {
+      "id": 419,
+      "word": "cul-de-sac",
+      "group": 3
+    },
+    {
+      "id": 420,
+      "word": "kerosene",
+      "alt": "kerosine",
+      "altNote": "also accepted",
+      "group": 3
+    },
+    {
+      "id": 421,
+      "word": "Pennsylvania",
+      "group": 3
+    },
+    {
+      "id": 422,
+      "word": "ampulla",
+      "group": 3
+    },
+    {
+      "id": 423,
+      "word": "sensilla",
+      "group": 3
+    },
+    {
+      "id": 424,
+      "word": "eponymous",
+      "group": 3
+    },
+    {
+      "id": 425,
+      "word": "Presbyterian",
+      "group": 3
+    },
+    {
+      "id": 426,
+      "word": "Sierra Leone",
+      "group": 3
+    },
+    {
+      "id": 427,
+      "word": "Eritrea",
+      "group": 3
+    },
+    {
+      "id": 428,
+      "word": "forsythia",
+      "group": 3
+    },
+    {
+      "id": 429,
+      "word": "salicylic acid",
+      "group": 3
+    },
+    {
+      "id": 430,
+      "word": "stomatopods",
+      "group": 3
+    },
+    {
+      "id": 431,
+      "word": "frankincense",
+      "group": 3
+    },
+    {
+      "id": 432,
+      "word": "solenodon",
+      "group": 3
+    },
+    {
+      "id": 433,
+      "word": "lactobacillus",
+      "group": 3
+    },
+    {
+      "id": 434,
+      "word": "vibrissae",
+      "group": 3
+    },
+    {
+      "id": 435,
+      "word": "a cappella",
+      "group": 3
+    },
+    {
+      "id": 436,
+      "word": "Amharic",
+      "group": 3
+    },
+    {
+      "id": 437,
+      "word": "Gloucester",
+      "group": 3
+    },
+    {
+      "id": 438,
+      "word": "prosciutto",
+      "group": 3
+    },
+    {
+      "id": 439,
+      "word": "chitinous",
+      "group": 3
+    },
+    {
+      "id": 440,
+      "word": "trichobothria",
+      "group": 3
+    },
+    {
+      "id": 441,
+      "word": "Cappadocia",
+      "group": 3
+    },
+    {
+      "id": 442,
+      "word": "Bildungsroman",
+      "group": 3
+    },
+    {
+      "id": 443,
+      "word": "electrolytes",
+      "group": 3
+    },
+    {
+      "id": 444,
+      "word": "ototoxic",
+      "group": 3
+    },
+    {
+      "id": 445,
+      "word": "Aphrodite",
+      "group": 3
+    },
+    {
+      "id": 446,
+      "word": "bogong moth",
+      "group": 3
+    },
+    {
+      "id": 447,
+      "word": "yakuza",
+      "group": 3
+    },
+    {
+      "id": 448,
+      "word": "Krio",
+      "group": 3
+    },
+    {
+      "id": 449,
+      "word": "Addis Ababa",
+      "group": 3
+    },
+    {
+      "id": 450,
+      "word": "spes phthisica",
+      "group": 3
+    }
+  ]
+}

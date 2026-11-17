@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-# ABOUTME: Generates pronunciation audio files for all spelling bee levels (6th, 1B, 2B, 3B)
+# ABOUTME: Generates pronunciation audio files for all word sets (school_2627, 6th, 1B, 2B, 3B)
 # ABOUTME: Reads words from text files and creates organized MP3 files using OpenAI TTS
 
 import json
+import unicodedata
 import os
 import ssl
 import time
@@ -19,6 +20,8 @@ def sanitize_filename(word):
     """
     Convert word to filename format matching the JavaScript implementation.
     """
+    # Strip accents first (ñ→n, é→e) to match JavaScript's normalize('NFD')
+    word = ''.join(c for c in unicodedata.normalize('NFD', word) if not unicodedata.combining(c))
     return (word
         .lower()
         .replace(' ', '_')
@@ -180,6 +183,13 @@ def main():
 
     # Process each bee level
     bee_configs = [
+        {
+            # 2026-27 Scripps School Spelling Bee list (One/Two/Three Bee), JSON-maintained
+            'level': 'school_2627',
+            'source_file': None,
+            'json_file': data_dir / 'words_school_2627.json',
+            'audio_dir': audio_root / 'school_2627'
+        },
         {
             # 6th grade data is maintained directly in JSON (it has sub-lists
             # and alternate spellings), so it is read rather than regenerated.

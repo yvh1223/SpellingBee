@@ -7,6 +7,7 @@ const SpellingBee = (() => {
     // Must stay in sync with sanitize_filename() in generate_all_audio.py
     function sanitizeFileName(word) {
         return word
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')   // strip accents: ñ→n, é→e
             .toLowerCase()
             .replace(/\s+/g, '_')
             .replace(/['’]/g, '')

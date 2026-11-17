@@ -1,23 +1,41 @@
-// ABOUTME: 6th grade (2026-27) practice page: lists, per-word progress, review flags and practice mode
-// ABOUTME: Progress lives in localStorage and can be saved to / loaded from a backup file
+// ABOUTME: 2026-27 practice page: word sets as tabs, per-word progress, review flags and practice mode
+// ABOUTME: Progress is shared across sets (keyed by word), kept in localStorage, with backup save/load
 
 (() => {
-    const DATA_URL = 'data/words_6th.json';
-    const AUDIO_DIR = 'audio/6th';
+    // Word sets shown as tabs; the first one is the default
+    const SETS = [
+        {
+            key: 'school',
+            tab: 'School Bee',
+            tagline: '2026\u201127 School Spelling Bee',
+            data: 'data/words_school_2627.json',
+            audio: 'audio/school_2627'
+        },
+        {
+            key: '6th',
+            tab: '6th Grade Classroom',
+            tagline: '6th Grade \u00b7 2026\u201127 Classroom Bee',
+            data: 'data/words_6th.json',
+            audio: 'audio/6th'
+        }
+    ];
     const KEYS = {
-        progress: 'spellingbee-6th-progress-v1',
-        collapsed: 'spellingbee-6th-collapsed-v1',
-        filter: 'spellingbee-6th-filter-v1'
+        progress: 'spellingbee-progress-v1',
+        legacyProgress: 'spellingbee-6th-progress-v1',
+        filter: 'spellingbee-filter-v1',
+        activeSet: 'spellingbee-active-set-v1',
+        collapsed: setKey => `spellingbee-${setKey}-collapsed-v1`
     };
     const { storage } = SpellingBee;
 
     // ---------- State ----------
-    let words = [];          // [{id, word, group, alt?, altNote?}]
-    let groups = [];         // [{id, name, source, count}]
+    const setData = {};      // { setKey: {words, groups} }
+    let activeSet = SETS[0];
+    let words = [];          // active set: [{id, word, group, alt?, altNote?}]
+    let groups = [];         // active set: [{id, name, source, count}]
     let progress = {};       // { wordKey: {s: 'done'|'review', m: misses, t: timestamp} }
-    let filter = storage.get(KEYS.filter, 'all');
-    let collapsed = new Set(storage.get(KEYS.collapsed, null) || []);
-    let firstVisit = storage.get(KEYS.collapsed, null) === null;
+    let filter = storage.get(KEYS.filter, storage.get('spellingbee-6th-filter-v1', 'all'));
+    let collapsed = new Set();
     let showAll = false;
     const revealed = new Set();   // ids revealed one by one
 
@@ -28,7 +46,8 @@
 
     // ---------- Progress ----------
     function loadProgress() {
-        const saved = storage.get(KEYS.progress, null);
+        // Progress used to be stored per 6th grade list; carry it over the first time
+        const saved = storage.get(KEYS.progress, null) || storage.get(KEYS.legacyProgress, null);
         progress = saved && saved.words ? saved.words : {};
     }
 
@@ -249,6 +268,13 @@
                 ? 'Every word is done. Great work! Keep reviewing to stay sharp.'
                 : `${left} to go${c.review ? ` · ${c.review} flagged for review` : ''}`;
 
+        SETS.forEach(set => {
+            const tab = document.querySelector(`.set-tab[data-set="${set.key}"] .set-tab-count`);
+            if (!tab || !setData[set.key]) return;
+            const sc = counts(setData[set.key].words);
+            tab.textContent = `${sc.done}/${sc.all} done`;
+        });
+
         document.querySelectorAll('[data-count]').forEach(el => {
             el.textContent = c[el.dataset.count];
         });
@@ -300,7 +326,7 @@
 
     function toggleGroup(id) {
         if (collapsed.has(id)) collapsed.delete(id); else collapsed.add(id);
-        storage.set(KEYS.collapsed, [...collapsed]);
+        storage.set(KEYS.collapsed(activeSet.key), [...collapsed]);
         applyCollapsed();
     }
 
@@ -330,7 +356,7 @@
         $('toggle-expand-all').addEventListener('click', () => {
             const allCollapsed = groups.every(g => collapsed.has(g.id));
             collapsed = allCollapsed ? new Set() : new Set(groups.map(g => g.id));
-            storage.set(KEYS.collapsed, [...collapsed]);
+            storage.set(KEYS.collapsed(activeSet.key), [...collapsed]);
             applyCollapsed();
         });
 
@@ -339,7 +365,7 @@
 
     // ---------- Audio ----------
     function audioPath(w) {
-        return `${AUDIO_DIR}/${SpellingBee.sanitizeFileName(w.word)}.mp3`;
+        return `${activeSet.audio}/${SpellingBee.sanitizeFileName(w.word)}.mp3`;
     }
 
     function playWord(w, button, rate = 1) {
@@ -351,7 +377,7 @@
         $('backup-save').addEventListener('click', () => {
             const payload = {
                 app: 'SpellingBee',
-                list: '6th-2026-27',
+                list: '2026-27',
                 savedAt: new Date().toISOString(),
                 version: 1,
                 words: progress
@@ -360,7 +386,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `spellingbee-6th-progress-${new Date().toISOString().slice(0, 10)}.json`;
+            a.download = `spellingbee-progress-${new Date().toISOString().slice(0, 10)}.json`;
             document.body.appendChild(a);
             a.click();
             a.remove();
@@ -377,7 +403,7 @@
                 if (!data || data.app !== 'SpellingBee' || typeof data.words !== 'object') {
                     throw new Error('Not a SpellingBee backup');
                 }
-                const known = new Set(words.map(keyOf));
+                const known = new Set(Object.values(setData).flatMap(d => d.words.map(keyOf)));
                 const incoming = {};
                 Object.entries(data.words).forEach(([k, v]) => {
                     if (!known.has(k) || !v || typeof v !== 'object') return;
@@ -742,22 +768,68 @@
         loadProgress();
 
         try {
-            const response = await fetch(DATA_URL);
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            const data = await response.json();
-            words = data.words;
-            groups = data.groups;
+            const loaded = await Promise.all(SETS.map(async set => {
+                const response = await fetch(set.data);
+                if (!response.ok) throw new Error(`${set.data}: HTTP ${response.status}`);
+                return response.json();
+            }));
+            SETS.forEach((set, i) => {
+                setData[set.key] = { words: loaded[i].words, groups: loaded[i].groups };
+            });
         } catch (error) {
             console.error('Error loading words:', error);
-            $('lists').innerHTML = '<p class="list-empty">Could not load the word list. Please refresh the page.</p>';
+            $('lists').innerHTML = '<p class="list-empty">Could not load the word lists. Please refresh the page.</p>';
             return;
         }
 
-        // First visit: open List 1, keep the others tidy
-        if (firstVisit) {
-            collapsed = new Set(groups.slice(1).map(g => g.id));
-        }
         if (!['all', 'todo', 'review', 'done'].includes(filter)) filter = 'all';
+        renderTabs();
+
+        const fromHash = SETS.find(set => `#${set.key}` === location.hash);
+        const saved = SETS.find(set => set.key === storage.get(KEYS.activeSet, null));
+        switchSet((fromHash || saved || SETS[0]).key);
+        window.addEventListener('hashchange', () => {
+            const set = SETS.find(s => `#${s.key}` === location.hash);
+            if (set && set !== activeSet) switchSet(set.key);
+        });
+    }
+
+    // ---------- Word sets ----------
+    function renderTabs() {
+        const wrap = $('set-tabs');
+        wrap.innerHTML = '';
+        SETS.forEach(set => {
+            const b = document.createElement('button');
+            b.className = 'set-tab';
+            b.dataset.set = set.key;
+            b.setAttribute('role', 'tab');
+            b.innerHTML = '<span class="set-tab-name"></span><span class="set-tab-count"></span>';
+            b.querySelector('.set-tab-name').textContent = set.tab;
+            b.addEventListener('click', () => switchSet(set.key));
+            wrap.appendChild(b);
+        });
+    }
+
+    function switchSet(key) {
+        activeSet = SETS.find(set => set.key === key) || SETS[0];
+        storage.set(KEYS.activeSet, activeSet.key);
+        if (location.hash !== `#${activeSet.key}`) history.replaceState(null, '', `#${activeSet.key}`);
+
+        ({ words, groups } = setData[activeSet.key]);
+        revealed.clear();
+
+        // First visit to a set: open the first list, keep the others tidy
+        const savedCollapsed = storage.get(KEYS.collapsed(activeSet.key), null);
+        collapsed = new Set(savedCollapsed || groups.slice(1).map(g => g.id));
+
+        document.querySelectorAll('.set-tab').forEach(tab => {
+            const on = tab.dataset.set === activeSet.key;
+            tab.setAttribute('aria-selected', String(on));
+            tab.classList.toggle('is-active', on);
+        });
+        $('tagline').textContent = activeSet.tagline;
+        document.title = `SpellingBee - ${activeSet.tab}`;
+        practice.lists = [];
 
         renderLists();
         setFilter(filter);

@@ -1,6 +1,6 @@
 # SpellingBee Practice
 
-A calm, pronunciation-driven spelling practice website for the 6th grade 2026-27 Classroom Spelling Bee, with progress tracking and a practice mode.
+A calm, pronunciation-driven spelling practice website for the 2026-27 spelling bees, with progress tracking and a practice mode.
 
 **🌐 Live Site:** https://yvh1223.github.io/SpellingBee/
 
@@ -8,7 +8,10 @@ A calm, pronunciation-driven spelling practice website for the 6th grade 2026-27
 
 ## Features
 
-- **200 words** from the 26-27 Classroom Spelling Bee Study List, in three collapsible lists (50 / 50 / 100)
+- Two word sets as tabs:
+  - **School Bee**: the 2026-27 Scripps School Spelling Bee Study List, 450 words in One Bee / Two Bee / Three Bee
+  - **6th Grade Classroom**: 200 words from the 26-27 Classroom Spelling Bee Study List, in three lists (50 / 50 / 100)
+  - Progress is shared: a word marked done in one set is done in the other
 - **Progress tracking**: mark a word ✓ Got it or ⚑ Review; overall and per-list progress bars
 - **Filters**: All / Not done / Review / Done, so you can come back to just the tricky words
 - **Practice mode**: hear a word, type it (or spell it aloud and tap Show answer); right answers are marked done, misses are flagged for review with a missed count
